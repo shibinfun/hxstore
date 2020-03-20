@@ -1,0 +1,16 @@
+# Logfile created on 2020-03-20 16:13:46 +0800 by logger.rb/61378
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-20 16:13:46 +0800 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [66e8d7c6] Running /usr/bin/env mkdir -p /tmp as deploy@106.12.130.13
+ DEBUG [66e8d7c6] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-20 16:14:29 +0800 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [0bc088d2] Running /usr/bin/env mkdir -p /tmp as deploy@106.12.130.13
+ DEBUG [0bc088d2] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-20 16:15:58 +0800 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [a06e6b8c] Running /usr/bin/env mkdir -p /tmp as deploy@106.12.130.13
+ DEBUG [a06e6b8c] Command: /usr/bin/env mkdir -p /tmp
