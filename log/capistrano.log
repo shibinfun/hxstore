@@ -14,3 +14,8 @@
   INFO ---------------------------------------------------------------------------
   INFO [a06e6b8c] Running /usr/bin/env mkdir -p /tmp as deploy@106.12.130.13
  DEBUG [a06e6b8c] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-21 08:00:06 +0800 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [718beeb0] Running /usr/bin/env mkdir -p /tmp as deploy@106.12.130.13
+ DEBUG [718beeb0] Command: /usr/bin/env mkdir -p /tmp

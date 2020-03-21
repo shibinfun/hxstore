@@ -48,7 +48,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'mysql2'  # mysql2 和 pg 择一安装即可
+gem 'mysql2' # mysql2 和 pg 择一安装即可
 
 
 group :development, :test do
