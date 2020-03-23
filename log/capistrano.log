@@ -29,3 +29,28 @@
   INFO ---------------------------------------------------------------------------
   INFO [19a88a18] Running /usr/bin/env mkdir -p /tmp as deploy@106.12.130.13
  DEBUG [19a88a18] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-21 09:27:29 +0800 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [d9776f62] Running /usr/bin/env mkdir -p /tmp as deploy@106.12.130.13
+ DEBUG [d9776f62] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-23 08:31:33 +0800 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [56651849] Running /usr/bin/env mkdir -p /tmp as deploy@106.12.130.13
+ DEBUG [56651849] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-23 08:31:57 +0800 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [f5c8d1b0] Running /usr/bin/env mkdir -p /tmp as deploy@106.12.130.13
+ DEBUG [f5c8d1b0] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-23 12:32:49 +0800 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [3357efbd] Running /usr/bin/env mkdir -p /tmp as deploy@106.12.130.13
+ DEBUG [3357efbd] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-23 14:19:54 +0800 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [6dbc3f0f] Running /usr/bin/env mkdir -p /tmp as deploy@106.12.130.13
+ DEBUG [6dbc3f0f] Command: /usr/bin/env mkdir -p /tmp
