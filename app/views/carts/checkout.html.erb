@@ -1,7 +1,7 @@
 <div class="row">
    <div class="col-md-12">
 
-    <h2> 购物明细 </h2>
+    <h2> 产品明细 </h2>
 
     <table class="table table-bordered">
       <thead>
@@ -48,21 +48,16 @@
 
 
 
-          <legend> 订购人</legend>
+          <legend> 订购人姓名、                               地址：</legend>
           <div class="form-group col-lg-6">
             <%= f.input :billing_name  %>
           </div>
           <div class="form-group col-lg-6">
+
             <%= f.input :billing_address  %>
           </div>
 
-          <legend> 收货人</legend>
-          <div class="form-group col-lg-6">
-           <%= f.input :shipping_name  %>
-          </div>
-          <div class="form-group col-lg-6">
-            <%= f.input :shipping_address  %>
-          </div>
+
 
         <div class="checkout">
           <%= f.submit "生成订单", class: "btn btn-lg btn-danger pull-right",
