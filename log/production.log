@@ -2,3 +2,89 @@ D, [2020-03-25T22:13:09.317840 #10198] DEBUG -- :   [1m[35m (3.0ms)[0m  [1m
 D, [2020-03-25T22:13:09.326887 #10198] DEBUG -- :   [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
 D, [2020-03-25T22:13:09.354785 #10198] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 D, [2020-03-25T22:13:59.931118 #10205] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+D, [2020-03-25T22:16:11.372635 #10224] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+D, [2020-03-25T22:16:41.702565 #10226] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+D, [2020-03-25T22:18:43.979919 #10301] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+D, [2020-03-25T22:23:21.454772 #10315] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+D, [2020-03-25T22:24:22.983079 #10320] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+I, [2020-03-25T22:24:22.986555 #10320]  INFO -- : Migrating to DeviseCreateUsers (20200226042021)
+D, [2020-03-25T22:24:22.991297 #10320] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-03-25T22:24:22.996421 #10320] DEBUG -- :   [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2020-03-25T22:24:22.996917 #10320] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+D, [2020-03-25T22:24:22.997533 #10320] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+D, [2020-03-25T22:24:22.998539 #10320] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+D, [2020-03-25T22:24:22.999088 #10320] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+D, [2020-03-25T22:24:23.001928 #10320] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200226042021"]]
+D, [2020-03-25T22:24:23.004202 #10320] DEBUG -- :   [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+I, [2020-03-25T22:24:23.004298 #10320]  INFO -- : Migrating to CreateProducts (20200226051816)
+D, [2020-03-25T22:24:23.006476 #10320] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-03-25T22:24:23.008956 #10320] DEBUG -- :   [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "quantity" integer, "price" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2020-03-25T22:24:23.011008 #10320] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200226051816"]]
+D, [2020-03-25T22:24:23.013544 #10320] DEBUG -- :   [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+I, [2020-03-25T22:24:23.013872 #10320]  INFO -- : Migrating to AddIsAdminToUser (20200226054924)
+D, [2020-03-25T22:24:23.016765 #10320] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-03-25T22:24:23.020804 #10320] DEBUG -- :   [1m[35m (2.8ms)[0m  [1m[35mALTER TABLE "users" ADD "is_admin" boolean DEFAULT 'f'[0m
+D, [2020-03-25T22:24:23.023417 #10320] DEBUG -- :   [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200226054924"]]
+D, [2020-03-25T22:24:23.029688 #10320] DEBUG -- :   [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+I, [2020-03-25T22:24:23.029898 #10320]  INFO -- : Migrating to AddImageToProduct (20200226075205)
+D, [2020-03-25T22:24:23.033525 #10320] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-03-25T22:24:23.035231 #10320] DEBUG -- :   [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "products" ADD "image" varchar[0m
+D, [2020-03-25T22:24:23.039158 #10320] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200226075205"]]
+D, [2020-03-25T22:24:23.042537 #10320] DEBUG -- :   [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+I, [2020-03-25T22:24:23.042805 #10320]  INFO -- : Migrating to CreateCarts (20200226081829)
+D, [2020-03-25T22:24:23.045523 #10320] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-03-25T22:24:23.048135 #10320] DEBUG -- :   [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2020-03-25T22:24:23.049886 #10320] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200226081829"]]
+D, [2020-03-25T22:24:23.052733 #10320] DEBUG -- :   [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+I, [2020-03-25T22:24:23.052909 #10320]  INFO -- : Migrating to CreateCartItems (20200226081836)
+D, [2020-03-25T22:24:23.055701 #10320] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-03-25T22:24:23.057762 #10320] DEBUG -- :   [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "cart_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "cart_id" integer, "product_id" integer, "quantity" integer DEFAULT 1, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2020-03-25T22:24:23.060860 #10320] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200226081836"]]
+D, [2020-03-25T22:24:23.065414 #10320] DEBUG -- :   [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+I, [2020-03-25T22:24:23.065660 #10320]  INFO -- : Migrating to CreateOrders (20200226093134)
+D, [2020-03-25T22:24:23.069491 #10320] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-03-25T22:24:23.071134 #10320] DEBUG -- :   [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "total" integer DEFAULT 0, "user_id" integer, "billing_name" varchar, "billing_address" varchar, "shipping_name" varchar, "shipping_address" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2020-03-25T22:24:23.075080 #10320] DEBUG -- :   [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200226093134"]]
+D, [2020-03-25T22:24:23.080144 #10320] DEBUG -- :   [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+I, [2020-03-25T22:24:23.082558 #10320]  INFO -- : Migrating to CreateProductLists (20200226094144)
+D, [2020-03-25T22:24:23.086076 #10320] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-03-25T22:24:23.087668 #10320] DEBUG -- :   [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "product_lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "order_id" integer, "product_name" varchar, "product_price" integer, "quantity" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2020-03-25T22:24:23.089289 #10320] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200226094144"]]
+D, [2020-03-25T22:24:23.095571 #10320] DEBUG -- :   [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+I, [2020-03-25T22:24:23.095743 #10320]  INFO -- : Migrating to AddTokenToOrder (20200226094813)
+D, [2020-03-25T22:24:23.100066 #10320] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-03-25T22:24:23.102503 #10320] DEBUG -- :   [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "orders" ADD "token" varchar[0m
+D, [2020-03-25T22:24:23.105186 #10320] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200226094813"]]
+D, [2020-03-25T22:24:23.110383 #10320] DEBUG -- :   [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+I, [2020-03-25T22:24:23.110547 #10320]  INFO -- : Migrating to AddIsPaidToOrder (20200226100024)
+D, [2020-03-25T22:24:23.115172 #10320] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-03-25T22:24:23.117221 #10320] DEBUG -- :   [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "orders" ADD "is_paid" boolean DEFAULT 'f'[0m
+D, [2020-03-25T22:24:23.120134 #10320] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200226100024"]]
+D, [2020-03-25T22:24:23.125825 #10320] DEBUG -- :   [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+I, [2020-03-25T22:24:23.125982 #10320]  INFO -- : Migrating to AddPaymentMethodToOrder (20200226100148)
+D, [2020-03-25T22:24:23.129287 #10320] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-03-25T22:24:23.132208 #10320] DEBUG -- :   [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "orders" ADD "payment_method" varchar[0m
+D, [2020-03-25T22:24:23.135437 #10320] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200226100148"]]
+D, [2020-03-25T22:24:23.142383 #10320] DEBUG -- :   [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+I, [2020-03-25T22:24:23.142575 #10320]  INFO -- : Migrating to AddAasmStateToOrder (20200227032130)
+D, [2020-03-25T22:24:23.144432 #10320] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-03-25T22:24:23.146621 #10320] DEBUG -- :   [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "orders" ADD "aasm_state" varchar DEFAULT 'order_placed'[0m
+D, [2020-03-25T22:24:23.149417 #10320] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_aasm_state" ON "orders" ("aasm_state")[0m
+D, [2020-03-25T22:24:23.153874 #10320] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200227032130"]]
+D, [2020-03-25T22:24:23.160415 #10320] DEBUG -- :   [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-03-25T22:24:23.163867 #10320] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+D, [2020-03-25T22:24:23.170811 #10320] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-03-25T22:24:23.190046 #10320] DEBUG -- :   [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "production"], ["created_at", "2020-03-25 14:24:23.180286"], ["updated_at", "2020-03-25 14:24:23.180286"]]
+D, [2020-03-25T22:24:23.198944 #10320] DEBUG -- :   [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-03-25T22:24:36.592141 #10324] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+D, [2020-03-25T22:24:36.767109 #10324] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-03-25T22:24:36.775610 #10324] DEBUG -- :   [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "16881688@qq.com"], ["LIMIT", 1]]
+D, [2020-03-25T22:24:36.777647 #10324] DEBUG -- :   [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "is_admin") VALUES (?, ?, ?, ?, ?)[0m  [["email", "16881688@qq.com"], ["encrypted_password", "$2a$11$FLEZfF5IVh8suGXaD6oTa.2YxihXxht.hjbCyX49nmcA/lwU07YGq"], ["created_at", "2020-03-25 14:24:36.775995"], ["updated_at", "2020-03-25 14:24:36.775995"], ["is_admin", "t"]]
+D, [2020-03-25T22:24:36.779707 #10324] DEBUG -- :   [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
