@@ -22601,3 +22601,330 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 194ms (Views: 177.8ms | ActiveRecord: 3.5ms)
 
 
+Started GET "/" for ::1 at 2020-03-25 20:53:14 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (27.0ms)
+  [1m[36mCart Load (1.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "cart_items" ON "products"."id" = "cart_items"."product_id" WHERE "cart_items"."cart_id" = ?[0m  [["cart_id", 15]]
+  Rendered common/_navbar.html.erb (138.4ms)
+  Rendered common/_flashes.html.erb (0.8ms)
+  Rendered common/_footer.html.erb (0.6ms)
+Completed 200 OK in 1342ms (Views: 1286.3ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-03-25 20:53:18 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/oobin/.rvm/gems/ruby-2.5.5/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/oobin/.rvm/gems/ruby-2.5.5/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/oobin/.rvm/gems/ruby-2.5.5/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (66.6ms)
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "cart_items" ON "products"."id" = "cart_items"."product_id" WHERE "cart_items"."cart_id" = ?[0m  [["cart_id", 15]]
+  Rendered common/_navbar.html.erb (7.9ms)
+  Rendered common/_flashes.html.erb (1.5ms)
+  Rendered common/_footer.html.erb (0.5ms)
+Completed 200 OK in 162ms (Views: 150.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-03-25 20:53:32 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lEWuEaCqvuotsDGZ69fjznn/VtCUPiCLNrGE1EyR3YECgLKdR7DEbR/Kiw7oTY73uuOTWMl8H5kEmSe2TnSamA==", "user"=>{"email"=>"1688@qq.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "1688@qq.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin/products/new
+Completed 302 Found in 195ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/admin/products/new" for ::1 at 2020-03-25 20:53:32 +0800
+Processing by Admin::ProductsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering admin/products/new.html.erb within layouts/admin
+  Rendered admin/products/new.html.erb within layouts/admin (123.5ms)
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "cart_items" ON "products"."id" = "cart_items"."product_id" WHERE "cart_items"."cart_id" = ?[0m  [["cart_id", 15]]
+  Rendered common/_navbar.html.erb (7.4ms)
+Completed 200 OK in 219ms (Views: 213.9ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "16881688@qq.com"], ["LIMIT", 1]]
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "is_admin") VALUES (?, ?, ?, ?, ?)[0m  [["email", "16881688@qq.com"], ["encrypted_password", "$2a$11$cMWeUNQiN8tFY5Ti6u5cWuSRVy2J5bdiBmuGVE6plfU88Uy0eMdy6"], ["created_at", "2020-03-25 12:59:42.111757"], ["updated_at", "2020-03-25 12:59:42.111757"], ["is_admin", "t"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2020-03-25 20:59:56 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (20.3ms)
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "cart_items" ON "products"."id" = "cart_items"."product_id" WHERE "cart_items"."cart_id" = ?[0m  [["cart_id", 15]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered common/_navbar.html.erb (167.9ms)
+  Rendered common/_flashes.html.erb (0.9ms)
+  Rendered common/_footer.html.erb (0.9ms)
+Completed 200 OK in 827ms (Views: 780.2ms | ActiveRecord: 2.8ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-03-25 21:00:01 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"S4ugb9APJ2unDwxUuZ6D0cE4rb+brJxCSfGZsSQGoQj4bBowSjt2L6Sj/lof2jOtUWTgAbqUJSbLsg/Pt2kU4w=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 36ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-25 21:00:01 +0800
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (3.7ms)
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.4ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-03-25 13:00:01.622989"], ["updated_at", "2020-03-25 13:00:01.622989"]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "cart_items" ON "products"."id" = "cart_items"."product_id" WHERE "cart_items"."cart_id" = ?[0m  [["cart_id", 16]]
+  Rendered common/_navbar.html.erb (29.0ms)
+  Rendered common/_flashes.html.erb (0.8ms)
+  Rendered common/_footer.html.erb (0.5ms)
+Completed 200 OK in 118ms (Views: 105.5ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-03-25 21:00:02 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/oobin/.rvm/gems/ruby-2.5.5/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/oobin/.rvm/gems/ruby-2.5.5/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /Users/oobin/.rvm/gems/ruby-2.5.5/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (44.0ms)
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "cart_items" ON "products"."id" = "cart_items"."product_id" WHERE "cart_items"."cart_id" = ?[0m  [["cart_id", 16]]
+  Rendered common/_navbar.html.erb (8.6ms)
+  Rendered common/_flashes.html.erb (0.8ms)
+  Rendered common/_footer.html.erb (0.3ms)
+Completed 200 OK in 174ms (Views: 167.9ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-03-25 21:00:16 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e633z5UeOl6vhuuU5ipm+5ZzO3+j/LbIRa1Cf8Dij0iEpfWcol/k6KTLcfedDr2dSnb4z9MsFcGR3ebHm/rl+A==", "user"=>{"email"=>"1688@qq.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "1688@qq.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 379ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-25 21:00:16 +0800
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (31.0ms)
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "cart_items" ON "products"."id" = "cart_items"."product_id" WHERE "cart_items"."cart_id" = ?[0m  [["cart_id", 16]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered common/_navbar.html.erb (14.3ms)
+  Rendered common/_flashes.html.erb (2.3ms)
+  Rendered common/_footer.html.erb (0.5ms)
+Completed 200 OK in 500ms (Views: 495.3ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "16881688@qq.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/" for ::1 at 2020-03-25 21:02:28 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (21.4ms)
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "cart_items" ON "products"."id" = "cart_items"."product_id" WHERE "cart_items"."cart_id" = ?[0m  [["cart_id", 16]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered common/_navbar.html.erb (190.3ms)
+  Rendered common/_flashes.html.erb (2.4ms)
+  Rendered common/_footer.html.erb (0.8ms)
+Completed 200 OK in 828ms (Views: 784.2ms | ActiveRecord: 3.0ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-03-25 21:02:33 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OWJdEPlGqt4AJAhVdHJyeTpAdazg+r4h+difRRIt0SjOZsPKZpWj3YOkpExDHemZUCvPqzaEKss+rGQnbNDdTg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 35ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-25 21:02:33 +0800
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (4.3ms)
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-03-25 13:02:34.004500"], ["updated_at", "2020-03-25 13:02:34.004500"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "cart_items" ON "products"."id" = "cart_items"."product_id" WHERE "cart_items"."cart_id" = ?[0m  [["cart_id", 17]]
+  Rendered common/_navbar.html.erb (22.9ms)
+  Rendered common/_flashes.html.erb (0.6ms)
+  Rendered common/_footer.html.erb (0.6ms)
+Completed 200 OK in 121ms (Views: 114.2ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-03-25 21:02:36 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/oobin/.rvm/gems/ruby-2.5.5/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/oobin/.rvm/gems/ruby-2.5.5/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered /Users/oobin/.rvm/gems/ruby-2.5.5/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (44.3ms)
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "cart_items" ON "products"."id" = "cart_items"."product_id" WHERE "cart_items"."cart_id" = ?[0m  [["cart_id", 17]]
+  Rendered common/_navbar.html.erb (5.9ms)
+  Rendered common/_flashes.html.erb (0.6ms)
+  Rendered common/_footer.html.erb (0.4ms)
+Completed 200 OK in 134ms (Views: 128.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-03-25 21:02:51 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YJwk6r/xC66mU8cQ1bOb7R/g39JmbKFWLF1MV9HjFVq8DNtmzyeuBG8We7gq7mA+PXqHsm6U9ir7CykbUuidvQ==", "user"=>{"email"=>"16881688@qq.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "16881688@qq.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 206ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-25 21:02:51 +0800
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (5.9ms)
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "cart_items" ON "products"."id" = "cart_items"."product_id" WHERE "cart_items"."cart_id" = ?[0m  [["cart_id", 17]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered common/_navbar.html.erb (8.9ms)
+  Rendered common/_flashes.html.erb (0.8ms)
+  Rendered common/_footer.html.erb (0.4ms)
+Completed 200 OK in 102ms (Views: 99.6ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-03-25 21:02:56 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"yv9p3/AEnqpugqX/jh3Zf5csPd1pEZJ+ufVzp7/R41xlp49eGZaOf4w4BaXItFmxd3iDtz2qBCCyjuOD/gFzQw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-25 21:02:56 +0800
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (6.6ms)
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-03-25 13:02:56.526655"], ["updated_at", "2020-03-25 13:02:56.526655"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "cart_items" ON "products"."id" = "cart_items"."product_id" WHERE "cart_items"."cart_id" = ?[0m  [["cart_id", 18]]
+  Rendered common/_navbar.html.erb (14.6ms)
+  Rendered common/_flashes.html.erb (0.8ms)
+  Rendered common/_footer.html.erb (2.3ms)
+Completed 200 OK in 93ms (Views: 87.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-03-25 21:02:58 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/oobin/.rvm/gems/ruby-2.5.5/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/oobin/.rvm/gems/ruby-2.5.5/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /Users/oobin/.rvm/gems/ruby-2.5.5/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (8.7ms)
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "cart_items" ON "products"."id" = "cart_items"."product_id" WHERE "cart_items"."cart_id" = ?[0m  [["cart_id", 18]]
+  Rendered common/_navbar.html.erb (4.5ms)
+  Rendered common/_flashes.html.erb (0.5ms)
+  Rendered common/_footer.html.erb (0.7ms)
+Completed 200 OK in 85ms (Views: 82.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-03-25 21:03:10 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cBC8wJgy5p5CVU/h/FBoWebBVNwLRwzWQfAw37NWbiuksNOBh/0zmBxtHAonl9z2jKxhCA3YIZ08B1DCdVVs8g==", "user"=>{"email"=>"1688@qq.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "1688@qq.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 172ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-03-25 21:03:11 +0800
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (6.0ms)
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "cart_items" ON "products"."id" = "cart_items"."product_id" WHERE "cart_items"."cart_id" = ?[0m  [["cart_id", 18]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered common/_navbar.html.erb (7.1ms)
+  Rendered common/_flashes.html.erb (1.2ms)
+  Rendered common/_footer.html.erb (0.6ms)
+Completed 200 OK in 89ms (Views: 86.1ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-03-25 21:03:16 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CgPTtNjyEroGvfWHHZeAqvzESHW0NdtiMSUiNB0Yo6EDZf4a23xbpx9+97es05VGPLrFnVAbF9IjCHPzHLXeog=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-25 21:03:16 +0800
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (3.6ms)
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-03-25 13:03:16.087884"], ["updated_at", "2020-03-25 13:03:16.087884"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "cart_items" ON "products"."id" = "cart_items"."product_id" WHERE "cart_items"."cart_id" = ?[0m  [["cart_id", 19]]
+  Rendered common/_navbar.html.erb (13.8ms)
+  Rendered common/_flashes.html.erb (1.1ms)
+  Rendered common/_footer.html.erb (0.5ms)
+Completed 200 OK in 84ms (Views: 77.8ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-03-25 21:03:19 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/oobin/.rvm/gems/ruby-2.5.5/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/oobin/.rvm/gems/ruby-2.5.5/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered /Users/oobin/.rvm/gems/ruby-2.5.5/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (6.9ms)
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "cart_items" ON "products"."id" = "cart_items"."product_id" WHERE "cart_items"."cart_id" = ?[0m  [["cart_id", 19]]
+  Rendered common/_navbar.html.erb (5.0ms)
+  Rendered common/_flashes.html.erb (0.5ms)
+  Rendered common/_footer.html.erb (0.5ms)
+Completed 200 OK in 97ms (Views: 95.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-03-25 21:03:28 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sM1rdayqaztl+x47GR+5IMKvqYKWvwMCq7JSPc0KDYpBMZurnmgF3jmvfTiZ0eDgXqUGSMkRddDZpO0ictYaDw==", "user"=>{"email"=>"123@qq.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "123@qq.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.2ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sM1rdayqaztl+x47GR+5IMKvqYKWvwMCq7JSPc0KDYpBMZurnmgF3jmvfTiZ0eDgXqUGSMkRddDZpO0ictYaDw==", "user"=>{"email"=>"123@qq.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /Users/oobin/.rvm/gems/ruby-2.5.5/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/oobin/.rvm/gems/ruby-2.5.5/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered /Users/oobin/.rvm/gems/ruby-2.5.5/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (6.8ms)
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "cart_items" ON "products"."id" = "cart_items"."product_id" WHERE "cart_items"."cart_id" = ?[0m  [["cart_id", 19]]
+  Rendered common/_navbar.html.erb (7.7ms)
+  Rendered common/_flashes.html.erb (0.9ms)
+  Rendered common/_footer.html.erb (0.4ms)
+Completed 200 OK in 266ms (Views: 108.6ms | ActiveRecord: 0.5ms)
+
+

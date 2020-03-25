@@ -7599,3 +7599,1139 @@ Caused by:
 /home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/rake-13.0.1/exe/rake:27:in `<top (required)>'
  DEBUG [0d4b18ea] 	Tasks: TOP => environment
  DEBUG [0d4b18ea] 	(See full trace by running task with --trace)
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-25 20:05:01 +0800 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [da6c33d6] Running /usr/bin/env mkdir -p /tmp as deploy@106.12.130.135
+ DEBUG [da6c33d6] Command: /usr/bin/env mkdir -p /tmp
+  INFO [da6c33d6] Finished in 0.940 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-hxstore-production-oobin.sh 0.0%
+  INFO Uploading /tmp/git-ssh-hxstore-production-oobin.sh 100.0%
+  INFO [69cb6af2] Running /usr/bin/env chmod 700 /tmp/git-ssh-hxstore-production-oobin.sh as deploy@106.12.130.135
+ DEBUG [69cb6af2] Command: /usr/bin/env chmod 700 /tmp/git-ssh-hxstore-production-oobin.sh
+  INFO [69cb6af2] Finished in 0.232 seconds with exit status 0 (successful).
+  INFO [75a97340] Running /usr/bin/env git ls-remote git@github.com:shibin88/hxstore.git HEAD as deploy@106.12.130.135
+ DEBUG [75a97340] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env git ls-remote git@github.com:shibin88/hxstore.git HEAD )
+ DEBUG [75a97340] 	8070f08118e3de7d89f79f8adbef2e2889af3501	HEAD
+  INFO [75a97340] Finished in 3.566 seconds with exit status 0 (successful).
+  INFO [699f4fb6] Running /usr/bin/env mkdir -p /home/deploy/hxstore/shared /home/deploy/hxstore/releases as deploy@106.12.130.135
+ DEBUG [699f4fb6] Command: /usr/bin/env mkdir -p /home/deploy/hxstore/shared /home/deploy/hxstore/releases
+  INFO [699f4fb6] Finished in 0.193 seconds with exit status 0 (successful).
+  INFO [fc500954] Running /usr/bin/env mkdir -p /home/deploy/hxstore/shared/log /home/deploy/hxstore/shared/tmp/pids /home/deploy/hxstore/shared/tmp/cache /home/deploy/hxstore/shared/tmp/sockets /home/deploy/hxstore/shared/public/system /home/deploy/hxstore/shared/public/assets as deploy@106.12.130.135
+ DEBUG [fc500954] Command: /usr/bin/env mkdir -p /home/deploy/hxstore/shared/log /home/deploy/hxstore/shared/tmp/pids /home/deploy/hxstore/shared/tmp/cache /home/deploy/hxstore/shared/tmp/sockets /home/deploy/hxstore/shared/public/system /home/deploy/hxstore/shared/public/assets
+  INFO [fc500954] Finished in 0.265 seconds with exit status 0 (successful).
+  INFO [11a83550] Running /usr/bin/env mkdir -p /home/deploy/hxstore/shared/config as deploy@106.12.130.135
+ DEBUG [11a83550] Command: /usr/bin/env mkdir -p /home/deploy/hxstore/shared/config
+  INFO [11a83550] Finished in 0.248 seconds with exit status 0 (successful).
+ DEBUG [779db3d0] Running [ -f /home/deploy/hxstore/shared/config/database.yml ] as deploy@106.12.130.135
+ DEBUG [779db3d0] Command: [ -f /home/deploy/hxstore/shared/config/database.yml ]
+ DEBUG [779db3d0] Finished in 0.278 seconds with exit status 0 (successful).
+ DEBUG [d8e1ec20] Running [ -f /home/deploy/hxstore/shared/config/secrets.yml ] as deploy@106.12.130.135
+ DEBUG [d8e1ec20] Command: [ -f /home/deploy/hxstore/shared/config/secrets.yml ]
+ DEBUG [d8e1ec20] Finished in 0.239 seconds with exit status 0 (successful).
+ DEBUG [b9141825] Running [ -f /home/deploy/hxstore/current/REVISION ] as deploy@106.12.130.135
+ DEBUG [b9141825] Command: [ -f /home/deploy/hxstore/current/REVISION ]
+ DEBUG [b9141825] Finished in 0.210 seconds with exit status 1 (failed).
+ DEBUG [6214bd8f] Running [ -f /home/deploy/hxstore/repo/HEAD ] as deploy@106.12.130.135
+ DEBUG [6214bd8f] Command: [ -f /home/deploy/hxstore/repo/HEAD ]
+ DEBUG [6214bd8f] Finished in 0.223 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/hxstore/repo
+ DEBUG [f9e921be] Running if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [f9e921be] Command: if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi
+ DEBUG [f9e921be] Finished in 0.240 seconds with exit status 0 (successful).
+  INFO [254613d5] Running /usr/bin/env git remote set-url origin git@github.com:shibin88/hxstore.git as deploy@106.12.130.135
+ DEBUG [254613d5] Command: cd /home/deploy/hxstore/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env git remote set-url origin git@github.com:shibin88/hxstore.git )
+  INFO [254613d5] Finished in 0.235 seconds with exit status 0 (successful).
+  INFO [4f78a7d0] Running /usr/bin/env git remote update --prune as deploy@106.12.130.135
+ DEBUG [4f78a7d0] Command: cd /home/deploy/hxstore/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [4f78a7d0] 	Fetching origin
+ DEBUG [4f78a7d0] 	From github.com:shibin88/hxstore
+   142e14b..8070f08  master     -> master
+  INFO [4f78a7d0] Finished in 5.903 seconds with exit status 0 (successful).
+ DEBUG [3c25dbde] Running if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [3c25dbde] Command: if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi
+ DEBUG [3c25dbde] Finished in 0.144 seconds with exit status 0 (successful).
+  INFO [69666bda] Running /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325120508 as deploy@106.12.130.135
+ DEBUG [69666bda] Command: cd /home/deploy/hxstore/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325120508 )
+  INFO [69666bda] Finished in 0.232 seconds with exit status 0 (successful).
+  INFO [a13f5d1d] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/hxstore/releases/20200325120508 as deploy@106.12.130.135
+ DEBUG [a13f5d1d] Command: cd /home/deploy/hxstore/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/hxstore/releases/20200325120508 )
+  INFO [a13f5d1d] Finished in 0.280 seconds with exit status 0 (successful).
+ DEBUG [66cd3e0d] Running if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [66cd3e0d] Command: if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi
+ DEBUG [66cd3e0d] Finished in 0.469 seconds with exit status 0 (successful).
+ DEBUG [6f4c6d6c] Running /usr/bin/env git rev-list --max-count=1 master as deploy@106.12.130.135
+ DEBUG [6f4c6d6c] Command: cd /home/deploy/hxstore/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [6f4c6d6c] 	8070f08118e3de7d89f79f8adbef2e2889af3501
+ DEBUG [6f4c6d6c] Finished in 0.308 seconds with exit status 0 (successful).
+ DEBUG [bb4bda84] Running if test ! -d /home/deploy/hxstore/releases/20200325120508; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325120508'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [bb4bda84] Command: if test ! -d /home/deploy/hxstore/releases/20200325120508; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325120508'" 1>&2; false; fi
+ DEBUG [bb4bda84] Finished in 0.455 seconds with exit status 0 (successful).
+  INFO [35692f05] Running /usr/bin/env echo "8070f08118e3de7d89f79f8adbef2e2889af3501" > REVISION as deploy@106.12.130.135
+ DEBUG [35692f05] Command: cd /home/deploy/hxstore/releases/20200325120508 && /usr/bin/env echo "8070f08118e3de7d89f79f8adbef2e2889af3501" > REVISION
+  INFO [35692f05] Finished in 0.370 seconds with exit status 0 (successful).
+  INFO [ba151e1f] Running /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325120508/config as deploy@106.12.130.135
+ DEBUG [ba151e1f] Command: /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325120508/config
+  INFO [ba151e1f] Finished in 0.219 seconds with exit status 0 (successful).
+ DEBUG [ef5b4f57] Running [ -L /home/deploy/hxstore/releases/20200325120508/config/database.yml ] as deploy@106.12.130.135
+ DEBUG [ef5b4f57] Command: [ -L /home/deploy/hxstore/releases/20200325120508/config/database.yml ]
+ DEBUG [ef5b4f57] Finished in 0.230 seconds with exit status 1 (failed).
+ DEBUG [269e7d61] Running [ -f /home/deploy/hxstore/releases/20200325120508/config/database.yml ] as deploy@106.12.130.135
+ DEBUG [269e7d61] Command: [ -f /home/deploy/hxstore/releases/20200325120508/config/database.yml ]
+ DEBUG [269e7d61] Finished in 0.232 seconds with exit status 0 (successful).
+  INFO [7c235865] Running /usr/bin/env rm /home/deploy/hxstore/releases/20200325120508/config/database.yml as deploy@106.12.130.135
+ DEBUG [7c235865] Command: /usr/bin/env rm /home/deploy/hxstore/releases/20200325120508/config/database.yml
+  INFO [7c235865] Finished in 0.235 seconds with exit status 0 (successful).
+  INFO [fc6711bd] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/config/database.yml /home/deploy/hxstore/releases/20200325120508/config/database.yml as deploy@106.12.130.135
+ DEBUG [fc6711bd] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/config/database.yml /home/deploy/hxstore/releases/20200325120508/config/database.yml
+  INFO [fc6711bd] Finished in 0.242 seconds with exit status 0 (successful).
+ DEBUG [6ae93d81] Running [ -L /home/deploy/hxstore/releases/20200325120508/config/secrets.yml ] as deploy@106.12.130.135
+ DEBUG [6ae93d81] Command: [ -L /home/deploy/hxstore/releases/20200325120508/config/secrets.yml ]
+ DEBUG [6ae93d81] Finished in 0.235 seconds with exit status 1 (failed).
+ DEBUG [82872d31] Running [ -f /home/deploy/hxstore/releases/20200325120508/config/secrets.yml ] as deploy@106.12.130.135
+ DEBUG [82872d31] Command: [ -f /home/deploy/hxstore/releases/20200325120508/config/secrets.yml ]
+ DEBUG [82872d31] Finished in 0.234 seconds with exit status 0 (successful).
+  INFO [07465cf5] Running /usr/bin/env rm /home/deploy/hxstore/releases/20200325120508/config/secrets.yml as deploy@106.12.130.135
+ DEBUG [07465cf5] Command: /usr/bin/env rm /home/deploy/hxstore/releases/20200325120508/config/secrets.yml
+  INFO [07465cf5] Finished in 0.231 seconds with exit status 0 (successful).
+  INFO [0102890b] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/config/secrets.yml /home/deploy/hxstore/releases/20200325120508/config/secrets.yml as deploy@106.12.130.135
+ DEBUG [0102890b] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/config/secrets.yml /home/deploy/hxstore/releases/20200325120508/config/secrets.yml
+  INFO [0102890b] Finished in 0.228 seconds with exit status 0 (successful).
+  INFO [6e41e1b2] Running /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325120508 /home/deploy/hxstore/releases/20200325120508/tmp /home/deploy/hxstore/releases/20200325120508/public as deploy@106.12.130.135
+ DEBUG [6e41e1b2] Command: /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325120508 /home/deploy/hxstore/releases/20200325120508/tmp /home/deploy/hxstore/releases/20200325120508/public
+  INFO [6e41e1b2] Finished in 0.242 seconds with exit status 0 (successful).
+ DEBUG [fc07783d] Running [ -L /home/deploy/hxstore/releases/20200325120508/log ] as deploy@106.12.130.135
+ DEBUG [fc07783d] Command: [ -L /home/deploy/hxstore/releases/20200325120508/log ]
+ DEBUG [fc07783d] Finished in 0.231 seconds with exit status 1 (failed).
+ DEBUG [2ab43c58] Running [ -d /home/deploy/hxstore/releases/20200325120508/log ] as deploy@106.12.130.135
+ DEBUG [2ab43c58] Command: [ -d /home/deploy/hxstore/releases/20200325120508/log ]
+ DEBUG [2ab43c58] Finished in 0.229 seconds with exit status 0 (successful).
+  INFO [14168939] Running /usr/bin/env rm -rf /home/deploy/hxstore/releases/20200325120508/log as deploy@106.12.130.135
+ DEBUG [14168939] Command: /usr/bin/env rm -rf /home/deploy/hxstore/releases/20200325120508/log
+  INFO [14168939] Finished in 0.233 seconds with exit status 0 (successful).
+  INFO [a67e78c3] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/log /home/deploy/hxstore/releases/20200325120508/log as deploy@106.12.130.135
+ DEBUG [a67e78c3] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/log /home/deploy/hxstore/releases/20200325120508/log
+  INFO [a67e78c3] Finished in 0.229 seconds with exit status 0 (successful).
+ DEBUG [1fa59b8d] Running [ -L /home/deploy/hxstore/releases/20200325120508/tmp/pids ] as deploy@106.12.130.135
+ DEBUG [1fa59b8d] Command: [ -L /home/deploy/hxstore/releases/20200325120508/tmp/pids ]
+ DEBUG [1fa59b8d] Finished in 0.237 seconds with exit status 1 (failed).
+ DEBUG [f32d195d] Running [ -d /home/deploy/hxstore/releases/20200325120508/tmp/pids ] as deploy@106.12.130.135
+ DEBUG [f32d195d] Command: [ -d /home/deploy/hxstore/releases/20200325120508/tmp/pids ]
+ DEBUG [f32d195d] Finished in 0.228 seconds with exit status 1 (failed).
+  INFO [8ca02d84] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/pids /home/deploy/hxstore/releases/20200325120508/tmp/pids as deploy@106.12.130.135
+ DEBUG [8ca02d84] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/pids /home/deploy/hxstore/releases/20200325120508/tmp/pids
+  INFO [8ca02d84] Finished in 0.233 seconds with exit status 0 (successful).
+ DEBUG [4aa7bbec] Running [ -L /home/deploy/hxstore/releases/20200325120508/tmp/cache ] as deploy@106.12.130.135
+ DEBUG [4aa7bbec] Command: [ -L /home/deploy/hxstore/releases/20200325120508/tmp/cache ]
+ DEBUG [4aa7bbec] Finished in 0.229 seconds with exit status 1 (failed).
+ DEBUG [9f03bcf3] Running [ -d /home/deploy/hxstore/releases/20200325120508/tmp/cache ] as deploy@106.12.130.135
+ DEBUG [9f03bcf3] Command: [ -d /home/deploy/hxstore/releases/20200325120508/tmp/cache ]
+ DEBUG [9f03bcf3] Finished in 0.234 seconds with exit status 0 (successful).
+  INFO [c1fb8ab1] Running /usr/bin/env rm -rf /home/deploy/hxstore/releases/20200325120508/tmp/cache as deploy@106.12.130.135
+ DEBUG [c1fb8ab1] Command: /usr/bin/env rm -rf /home/deploy/hxstore/releases/20200325120508/tmp/cache
+  INFO [c1fb8ab1] Finished in 0.243 seconds with exit status 0 (successful).
+  INFO [8801347e] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/cache /home/deploy/hxstore/releases/20200325120508/tmp/cache as deploy@106.12.130.135
+ DEBUG [8801347e] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/cache /home/deploy/hxstore/releases/20200325120508/tmp/cache
+  INFO [8801347e] Finished in 0.227 seconds with exit status 0 (successful).
+ DEBUG [b22a19ff] Running [ -L /home/deploy/hxstore/releases/20200325120508/tmp/sockets ] as deploy@106.12.130.135
+ DEBUG [b22a19ff] Command: [ -L /home/deploy/hxstore/releases/20200325120508/tmp/sockets ]
+ DEBUG [b22a19ff] Finished in 0.230 seconds with exit status 1 (failed).
+ DEBUG [614e36a6] Running [ -d /home/deploy/hxstore/releases/20200325120508/tmp/sockets ] as deploy@106.12.130.135
+ DEBUG [614e36a6] Command: [ -d /home/deploy/hxstore/releases/20200325120508/tmp/sockets ]
+ DEBUG [614e36a6] Finished in 0.236 seconds with exit status 1 (failed).
+  INFO [98b95011] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/sockets /home/deploy/hxstore/releases/20200325120508/tmp/sockets as deploy@106.12.130.135
+ DEBUG [98b95011] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/sockets /home/deploy/hxstore/releases/20200325120508/tmp/sockets
+  INFO [98b95011] Finished in 0.233 seconds with exit status 0 (successful).
+ DEBUG [f0a4f84f] Running [ -L /home/deploy/hxstore/releases/20200325120508/public/system ] as deploy@106.12.130.135
+ DEBUG [f0a4f84f] Command: [ -L /home/deploy/hxstore/releases/20200325120508/public/system ]
+ DEBUG [f0a4f84f] Finished in 0.227 seconds with exit status 1 (failed).
+ DEBUG [2e4c16e2] Running [ -d /home/deploy/hxstore/releases/20200325120508/public/system ] as deploy@106.12.130.135
+ DEBUG [2e4c16e2] Command: [ -d /home/deploy/hxstore/releases/20200325120508/public/system ]
+ DEBUG [2e4c16e2] Finished in 0.232 seconds with exit status 1 (failed).
+  INFO [62727889] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/public/system /home/deploy/hxstore/releases/20200325120508/public/system as deploy@106.12.130.135
+ DEBUG [62727889] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/public/system /home/deploy/hxstore/releases/20200325120508/public/system
+  INFO [62727889] Finished in 0.228 seconds with exit status 0 (successful).
+ DEBUG [388ea3ad] Running [ -L /home/deploy/hxstore/releases/20200325120508/public/assets ] as deploy@106.12.130.135
+ DEBUG [388ea3ad] Command: [ -L /home/deploy/hxstore/releases/20200325120508/public/assets ]
+ DEBUG [388ea3ad] Finished in 0.247 seconds with exit status 1 (failed).
+ DEBUG [9a710b15] Running [ -d /home/deploy/hxstore/releases/20200325120508/public/assets ] as deploy@106.12.130.135
+ DEBUG [9a710b15] Command: [ -d /home/deploy/hxstore/releases/20200325120508/public/assets ]
+ DEBUG [9a710b15] Finished in 0.307 seconds with exit status 1 (failed).
+  INFO [e0fd1210] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/public/assets /home/deploy/hxstore/releases/20200325120508/public/assets as deploy@106.12.130.135
+ DEBUG [e0fd1210] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/public/assets /home/deploy/hxstore/releases/20200325120508/public/assets
+  INFO [e0fd1210] Finished in 0.230 seconds with exit status 0 (successful).
+ DEBUG [8b9e7b4b] Running if test ! -d /home/deploy/hxstore/releases/20200325120508; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325120508'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [8b9e7b4b] Command: if test ! -d /home/deploy/hxstore/releases/20200325120508; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325120508'" 1>&2; false; fi
+ DEBUG [8b9e7b4b] Finished in 0.228 seconds with exit status 0 (successful).
+ DEBUG [02e4fa7a] Running /usr/bin/env bundle check --path /home/deploy/hxstore/shared/bundle as deploy@106.12.130.135
+ DEBUG [02e4fa7a] Command: cd /home/deploy/hxstore/releases/20200325120508 && /usr/bin/env bundle check --path /home/deploy/hxstore/shared/bundle
+ DEBUG [02e4fa7a] 	The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+ DEBUG [02e4fa7a] 	The following gems are missing
+ DEBUG [02e4fa7a] 	 * net-ssh (5.2.0)
+ DEBUG [02e4fa7a] 	 * net-scp (2.0.0)
+ DEBUG [02e4fa7a] 	 * sshkit (1.21.0)
+ DEBUG [02e4fa7a] 	 * airbrussh (1.4.0)
+ DEBUG [02e4fa7a] 	 * bindex (0.8.1)
+ DEBUG [02e4fa7a] 	 * byebug (11.1.1)
+ DEBUG [02e4fa7a] 	 * capistrano (3.12.1)
+ DEBUG [02e4fa7a] 	 * capistrano-bundler (1.6.0)
+ DEBUG [02e4fa7a] 	 * capistrano-passenger (0.2.0)
+ DEBUG [02e4fa7a] 	 * capistrano-rails (1.4.0)
+ DEBUG [02e4fa7a] 	 * diff-lcs (1.3)
+ DEBUG [02e4fa7a] 	 * launchy (2.4.3)
+ DEBUG [02e4fa7a] 	 * letter_opener (1.7.0)
+ DEBUG [02e4fa7a] 	 * listen (3.0.8)
+ DEBUG [02e4fa7a] 	 * rspec-support (3.9.2)
+ DEBUG [02e4fa7a] 	 * rspec-core (3.9.1)
+ DEBUG [02e4fa7a] 	 * rspec-expectations (3.9.1)
+ DEBUG [02e4fa7a] 	 * rspec-mocks (3.9.1)
+ DEBUG [02e4fa7a] 	 * rspec-rails (3.9.1)
+ DEBUG [02e4fa7a] 	 * spring (2.1.0)
+ DEBUG [02e4fa7a] 	 * spring-watcher-listen (2.0.1)
+ DEBUG [02e4fa7a] 	 * web-console (3.7.0)
+ DEBUG [02e4fa7a] 	Install missing gems with `bundle install`
+ DEBUG [02e4fa7a] Finished in 0.505 seconds with exit status 1 (failed).
+  INFO [b8d66d25] Running /usr/bin/env bundle install --path /home/deploy/hxstore/shared/bundle --jobs 4 --without development test --deployment --quiet as deploy@106.12.130.135
+ DEBUG [b8d66d25] Command: cd /home/deploy/hxstore/releases/20200325120508 && /usr/bin/env bundle install --path /home/deploy/hxstore/shared/bundle --jobs 4 --without development test --deployment --quiet
+  INFO [b8d66d25] Finished in 0.589 seconds with exit status 0 (successful).
+ DEBUG [fa374071] Running if test ! -d /home/deploy/hxstore/releases/20200325120508; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325120508'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [fa374071] Command: if test ! -d /home/deploy/hxstore/releases/20200325120508; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325120508'" 1>&2; false; fi
+ DEBUG [fa374071] Finished in 0.228 seconds with exit status 0 (successful).
+  INFO [9ab54e10] Running bundle exec rake assets:precompile as deploy@106.12.130.135
+ DEBUG [9ab54e10] Command: cd /home/deploy/hxstore/releases/20200325120508 && ( export RAILS_ENV="production" RAILS_GROUPS="" ; bundle exec rake assets:precompile )
+ DEBUG [9ab54e10] 	rake aborted!
+ DEBUG [9ab54e10] 	YAML syntax error occurred while parsing /home/deploy/hxstore/releases/20200325120508/config/database.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Error: (<unknown>): could not find expected ':' while scanning a simple key at line 7 column 3
+ DEBUG [9ab54e10] 	/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/configuration.rb:148:in `rescue in database_configuration'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/configuration.rb:130:in `database_configuration'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activerecord-5.0.7.2/lib/active_record/railtie.rb:122:in `block (2 levels) in <class:Railtie>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:69:in `instance_eval'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:69:in `block in execute_hook'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:60:in `with_execution_control'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:65:in `execute_hook'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:50:in `block in run_load_hooks'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:49:in `each'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:49:in `run_load_hooks'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activerecord-5.0.7.2/lib/active_record/base.rb:324:in `<module:ActiveRecord>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activerecord-5.0.7.2/lib/active_record/base.rb:24:in `<top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `block in require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/releases/20200325120508/app/models/application_record.rb:1:in `<top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `block in require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:380:in `block in require_or_load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:37:in `block in load_interlock'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies/interlock.rb:12:in `block in loading'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/concurrency/share_lock.rb:150:in `exclusive'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies/interlock.rb:11:in `loading'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:37:in `load_interlock'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:358:in `require_or_load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:512:in `load_missing_constant'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:203:in `const_missing'
+/home/deploy/hxstore/releases/20200325120508/app/models/user.rb:1:in `<top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `block in require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:380:in `block in require_or_load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:37:in `block in load_interlock'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies/interlock.rb:12:in `block in loading'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/concurrency/share_lock.rb:150:in `exclusive'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies/interlock.rb:11:in `loading'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:37:in `load_interlock'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:358:in `require_or_load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:512:in `load_missing_constant'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:203:in `const_missing'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/inflector/methods.rb:268:in `const_get'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/inflector/methods.rb:268:in `block in constantize'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/inflector/methods.rb:266:in `each'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/inflector/methods.rb:266:in `inject'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/inflector/methods.rb:266:in `constantize'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:584:in `get'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:615:in `constantize'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise.rb:320:in `get'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/mapping.rb:83:in `to'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/mapping.rb:78:in `modules'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/mapping.rb:95:in `routes'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/mapping.rb:162:in `default_used_route'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/mapping.rb:72:in `initialize'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise.rb:350:in `new'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise.rb:350:in `add_mapping'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/rails/routes.rb:243:in `block in devise_for'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/rails/routes.rb:242:in `each'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/rails/routes.rb:242:in `devise_for'
+/home/deploy/hxstore/releases/20200325120508/config/routes.rb:2:in `block in <top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/routing/route_set.rb:391:in `instance_exec'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/routing/route_set.rb:391:in `eval_block'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/routing/route_set.rb:373:in `draw'
+/home/deploy/hxstore/releases/20200325120508/config/routes.rb:1:in `<top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:287:in `load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:287:in `block in load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:287:in `load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:40:in `each'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:40:in `load_paths'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:16:in `reload!'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:26:in `block in updater'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/file_update_checker.rb:77:in `execute'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:27:in `updater'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:7:in `execute_if_updated'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/finisher.rb:119:in `block in <module:Finisher>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/initializable.rb:30:in `instance_exec'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/initializable.rb:30:in `run'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/initializable.rb:55:in `block in run_initializers'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/initializable.rb:54:in `run_initializers'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application.rb:352:in `initialize!'
+/home/deploy/hxstore/releases/20200325120508/config/environment.rb:5:in `<top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `block in require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application.rb:328:in `require_environment!'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application.rb:448:in `block in run_tasks_blocks'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/task.rb:62:in `block (2 levels) in define'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/rake-13.0.1/exe/rake:27:in `<top (required)>'
+ DEBUG [9ab54e10] 	
+Caused by:
+ DEBUG [9ab54e10] 	Psych::SyntaxError: (<unknown>): could not find expected ':' while scanning a simple key at line 7 column 3
+ DEBUG [9ab54e10] 	/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/configuration.rb:137:in `database_configuration'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activerecord-5.0.7.2/lib/active_record/railtie.rb:122:in `block (2 levels) in <class:Railtie>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:69:in `instance_eval'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:69:in `block in execute_hook'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:60:in `with_execution_control'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:65:in `execute_hook'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:50:in `block in run_load_hooks'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:49:in `each'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:49:in `run_load_hooks'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activerecord-5.0.7.2/lib/active_record/base.rb:324:in `<module:ActiveRecord>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activerecord-5.0.7.2/lib/active_record/base.rb:24:in `<top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `block in require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/releases/20200325120508/app/models/application_record.rb:1:in `<top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `block in require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:380:in `block in require_or_load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:37:in `block in load_interlock'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies/interlock.rb:12:in `block in loading'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/concurrency/share_lock.rb:150:in `exclusive'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies/interlock.rb:11:in `loading'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:37:in `load_interlock'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:358:in `require_or_load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:512:in `load_missing_constant'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:203:in `const_missing'
+/home/deploy/hxstore/releases/20200325120508/app/models/user.rb:1:in `<top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `block in require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:380:in `block in require_or_load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:37:in `block in load_interlock'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies/interlock.rb:12:in `block in loading'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/concurrency/share_lock.rb:150:in `exclusive'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies/interlock.rb:11:in `loading'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:37:in `load_interlock'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:358:in `require_or_load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:512:in `load_missing_constant'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:203:in `const_missing'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/inflector/methods.rb:268:in `const_get'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/inflector/methods.rb:268:in `block in constantize'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/inflector/methods.rb:266:in `each'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/inflector/methods.rb:266:in `inject'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/inflector/methods.rb:266:in `constantize'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:584:in `get'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:615:in `constantize'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise.rb:320:in `get'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/mapping.rb:83:in `to'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/mapping.rb:78:in `modules'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/mapping.rb:95:in `routes'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/mapping.rb:162:in `default_used_route'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/mapping.rb:72:in `initialize'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise.rb:350:in `new'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise.rb:350:in `add_mapping'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/rails/routes.rb:243:in `block in devise_for'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/rails/routes.rb:242:in `each'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/rails/routes.rb:242:in `devise_for'
+/home/deploy/hxstore/releases/20200325120508/config/routes.rb:2:in `block in <top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/routing/route_set.rb:391:in `instance_exec'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/routing/route_set.rb:391:in `eval_block'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/routing/route_set.rb:373:in `draw'
+/home/deploy/hxstore/releases/20200325120508/config/routes.rb:1:in `<top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:287:in `load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:287:in `block in load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:287:in `load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:40:in `each'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:40:in `load_paths'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:16:in `reload!'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:26:in `block in updater'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/file_update_checker.rb:77:in `execute'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:27:in `updater'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:7:in `execute_if_updated'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/finisher.rb:119:in `block in <module:Finisher>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/initializable.rb:30:in `instance_exec'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/initializable.rb:30:in `run'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/initializable.rb:55:in `block in run_initializers'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/initializable.rb:54:in `run_initializers'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application.rb:352:in `initialize!'
+/home/deploy/hxstore/releases/20200325120508/config/environment.rb:5:in `<top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `block in require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application.rb:328:in `require_environment!'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application.rb:448:in `block in run_tasks_blocks'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/task.rb:62:in `block (2 levels) in define'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/rake-13.0.1/exe/rake:27:in `<top (required)>'
+ DEBUG [9ab54e10] 	Tasks: TOP => environment
+ DEBUG [9ab54e10] 	(See full trace by running task with --trace)
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-25 20:11:04 +0800 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [532e1d23] Running /usr/bin/env mkdir -p /tmp as deploy@106.12.130.135
+ DEBUG [532e1d23] Command: /usr/bin/env mkdir -p /tmp
+  INFO [532e1d23] Finished in 0.864 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-hxstore-production-oobin.sh 0.0%
+  INFO Uploading /tmp/git-ssh-hxstore-production-oobin.sh 100.0%
+  INFO [e10ebc6a] Running /usr/bin/env chmod 700 /tmp/git-ssh-hxstore-production-oobin.sh as deploy@106.12.130.135
+ DEBUG [e10ebc6a] Command: /usr/bin/env chmod 700 /tmp/git-ssh-hxstore-production-oobin.sh
+  INFO [e10ebc6a] Finished in 0.213 seconds with exit status 0 (successful).
+  INFO [b3e2dbd5] Running /usr/bin/env git ls-remote git@github.com:shibin88/hxstore.git HEAD as deploy@106.12.130.135
+ DEBUG [b3e2dbd5] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env git ls-remote git@github.com:shibin88/hxstore.git HEAD )
+ DEBUG [b3e2dbd5] 	8070f08118e3de7d89f79f8adbef2e2889af3501	HEAD
+  INFO [b3e2dbd5] Finished in 7.794 seconds with exit status 0 (successful).
+  INFO [78b9db4d] Running /usr/bin/env mkdir -p /home/deploy/hxstore/shared /home/deploy/hxstore/releases as deploy@106.12.130.135
+ DEBUG [78b9db4d] Command: /usr/bin/env mkdir -p /home/deploy/hxstore/shared /home/deploy/hxstore/releases
+  INFO [78b9db4d] Finished in 0.173 seconds with exit status 0 (successful).
+  INFO [d9ff7654] Running /usr/bin/env mkdir -p /home/deploy/hxstore/shared/log /home/deploy/hxstore/shared/tmp/pids /home/deploy/hxstore/shared/tmp/cache /home/deploy/hxstore/shared/tmp/sockets /home/deploy/hxstore/shared/public/system /home/deploy/hxstore/shared/public/assets as deploy@106.12.130.135
+ DEBUG [d9ff7654] Command: /usr/bin/env mkdir -p /home/deploy/hxstore/shared/log /home/deploy/hxstore/shared/tmp/pids /home/deploy/hxstore/shared/tmp/cache /home/deploy/hxstore/shared/tmp/sockets /home/deploy/hxstore/shared/public/system /home/deploy/hxstore/shared/public/assets
+  INFO [d9ff7654] Finished in 0.210 seconds with exit status 0 (successful).
+  INFO [41d62ca4] Running /usr/bin/env mkdir -p /home/deploy/hxstore/shared/config as deploy@106.12.130.135
+ DEBUG [41d62ca4] Command: /usr/bin/env mkdir -p /home/deploy/hxstore/shared/config
+  INFO [41d62ca4] Finished in 0.217 seconds with exit status 0 (successful).
+ DEBUG [4a348103] Running [ -f /home/deploy/hxstore/shared/config/database.yml ] as deploy@106.12.130.135
+ DEBUG [4a348103] Command: [ -f /home/deploy/hxstore/shared/config/database.yml ]
+ DEBUG [4a348103] Finished in 0.210 seconds with exit status 0 (successful).
+ DEBUG [1551f623] Running [ -f /home/deploy/hxstore/shared/config/secrets.yml ] as deploy@106.12.130.135
+ DEBUG [1551f623] Command: [ -f /home/deploy/hxstore/shared/config/secrets.yml ]
+ DEBUG [1551f623] Finished in 0.211 seconds with exit status 0 (successful).
+ DEBUG [74b895e5] Running [ -f /home/deploy/hxstore/current/REVISION ] as deploy@106.12.130.135
+ DEBUG [74b895e5] Command: [ -f /home/deploy/hxstore/current/REVISION ]
+ DEBUG [74b895e5] Finished in 0.207 seconds with exit status 1 (failed).
+ DEBUG [73eef668] Running [ -f /home/deploy/hxstore/repo/HEAD ] as deploy@106.12.130.135
+ DEBUG [73eef668] Command: [ -f /home/deploy/hxstore/repo/HEAD ]
+ DEBUG [73eef668] Finished in 0.213 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/hxstore/repo
+ DEBUG [96762147] Running if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [96762147] Command: if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi
+ DEBUG [96762147] Finished in 0.208 seconds with exit status 0 (successful).
+  INFO [32df2541] Running /usr/bin/env git remote set-url origin git@github.com:shibin88/hxstore.git as deploy@106.12.130.135
+ DEBUG [32df2541] Command: cd /home/deploy/hxstore/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env git remote set-url origin git@github.com:shibin88/hxstore.git )
+  INFO [32df2541] Finished in 0.215 seconds with exit status 0 (successful).
+  INFO [f3bc9028] Running /usr/bin/env git remote update --prune as deploy@106.12.130.135
+ DEBUG [f3bc9028] Command: cd /home/deploy/hxstore/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [f3bc9028] 	Fetching origin
+  INFO [f3bc9028] Finished in 5.266 seconds with exit status 0 (successful).
+ DEBUG [4bb90e4d] Running if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [4bb90e4d] Command: if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi
+ DEBUG [4bb90e4d] Finished in 0.180 seconds with exit status 0 (successful).
+  INFO [82ad88ee] Running /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325121114 as deploy@106.12.130.135
+ DEBUG [82ad88ee] Command: cd /home/deploy/hxstore/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325121114 )
+  INFO [82ad88ee] Finished in 0.212 seconds with exit status 0 (successful).
+  INFO [5f6ea786] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/hxstore/releases/20200325121114 as deploy@106.12.130.135
+ DEBUG [5f6ea786] Command: cd /home/deploy/hxstore/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/hxstore/releases/20200325121114 )
+  INFO [5f6ea786] Finished in 0.267 seconds with exit status 0 (successful).
+ DEBUG [1ae92b8f] Running if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [1ae92b8f] Command: if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi
+ DEBUG [1ae92b8f] Finished in 0.217 seconds with exit status 0 (successful).
+ DEBUG [e553a815] Running /usr/bin/env git rev-list --max-count=1 master as deploy@106.12.130.135
+ DEBUG [e553a815] Command: cd /home/deploy/hxstore/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [e553a815] 	8070f08118e3de7d89f79f8adbef2e2889af3501
+ DEBUG [e553a815] Finished in 0.214 seconds with exit status 0 (successful).
+ DEBUG [c939a8b9] Running if test ! -d /home/deploy/hxstore/releases/20200325121114; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325121114'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [c939a8b9] Command: if test ! -d /home/deploy/hxstore/releases/20200325121114; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325121114'" 1>&2; false; fi
+ DEBUG [c939a8b9] Finished in 0.213 seconds with exit status 0 (successful).
+  INFO [d63833a9] Running /usr/bin/env echo "8070f08118e3de7d89f79f8adbef2e2889af3501" > REVISION as deploy@106.12.130.135
+ DEBUG [d63833a9] Command: cd /home/deploy/hxstore/releases/20200325121114 && /usr/bin/env echo "8070f08118e3de7d89f79f8adbef2e2889af3501" > REVISION
+  INFO [d63833a9] Finished in 0.212 seconds with exit status 0 (successful).
+  INFO [35fd9a92] Running /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325121114/config as deploy@106.12.130.135
+ DEBUG [35fd9a92] Command: /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325121114/config
+  INFO [35fd9a92] Finished in 0.211 seconds with exit status 0 (successful).
+ DEBUG [1c2b22dc] Running [ -L /home/deploy/hxstore/releases/20200325121114/config/database.yml ] as deploy@106.12.130.135
+ DEBUG [1c2b22dc] Command: [ -L /home/deploy/hxstore/releases/20200325121114/config/database.yml ]
+ DEBUG [1c2b22dc] Finished in 0.213 seconds with exit status 1 (failed).
+ DEBUG [47c8afe6] Running [ -f /home/deploy/hxstore/releases/20200325121114/config/database.yml ] as deploy@106.12.130.135
+ DEBUG [47c8afe6] Command: [ -f /home/deploy/hxstore/releases/20200325121114/config/database.yml ]
+ DEBUG [47c8afe6] Finished in 0.216 seconds with exit status 0 (successful).
+  INFO [cbe7a9a7] Running /usr/bin/env rm /home/deploy/hxstore/releases/20200325121114/config/database.yml as deploy@106.12.130.135
+ DEBUG [cbe7a9a7] Command: /usr/bin/env rm /home/deploy/hxstore/releases/20200325121114/config/database.yml
+  INFO [cbe7a9a7] Finished in 0.216 seconds with exit status 0 (successful).
+  INFO [a223da47] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/config/database.yml /home/deploy/hxstore/releases/20200325121114/config/database.yml as deploy@106.12.130.135
+ DEBUG [a223da47] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/config/database.yml /home/deploy/hxstore/releases/20200325121114/config/database.yml
+  INFO [a223da47] Finished in 0.211 seconds with exit status 0 (successful).
+ DEBUG [9dd7d837] Running [ -L /home/deploy/hxstore/releases/20200325121114/config/secrets.yml ] as deploy@106.12.130.135
+ DEBUG [9dd7d837] Command: [ -L /home/deploy/hxstore/releases/20200325121114/config/secrets.yml ]
+ DEBUG [9dd7d837] Finished in 0.209 seconds with exit status 1 (failed).
+ DEBUG [816d678e] Running [ -f /home/deploy/hxstore/releases/20200325121114/config/secrets.yml ] as deploy@106.12.130.135
+ DEBUG [816d678e] Command: [ -f /home/deploy/hxstore/releases/20200325121114/config/secrets.yml ]
+ DEBUG [816d678e] Finished in 0.212 seconds with exit status 0 (successful).
+  INFO [31a091af] Running /usr/bin/env rm /home/deploy/hxstore/releases/20200325121114/config/secrets.yml as deploy@106.12.130.135
+ DEBUG [31a091af] Command: /usr/bin/env rm /home/deploy/hxstore/releases/20200325121114/config/secrets.yml
+  INFO [31a091af] Finished in 0.213 seconds with exit status 0 (successful).
+  INFO [1583d017] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/config/secrets.yml /home/deploy/hxstore/releases/20200325121114/config/secrets.yml as deploy@106.12.130.135
+ DEBUG [1583d017] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/config/secrets.yml /home/deploy/hxstore/releases/20200325121114/config/secrets.yml
+  INFO [1583d017] Finished in 0.216 seconds with exit status 0 (successful).
+  INFO [ac935652] Running /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325121114 /home/deploy/hxstore/releases/20200325121114/tmp /home/deploy/hxstore/releases/20200325121114/public as deploy@106.12.130.135
+ DEBUG [ac935652] Command: /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325121114 /home/deploy/hxstore/releases/20200325121114/tmp /home/deploy/hxstore/releases/20200325121114/public
+  INFO [ac935652] Finished in 0.207 seconds with exit status 0 (successful).
+ DEBUG [3821ccb1] Running [ -L /home/deploy/hxstore/releases/20200325121114/log ] as deploy@106.12.130.135
+ DEBUG [3821ccb1] Command: [ -L /home/deploy/hxstore/releases/20200325121114/log ]
+ DEBUG [3821ccb1] Finished in 0.218 seconds with exit status 1 (failed).
+ DEBUG [51650c91] Running [ -d /home/deploy/hxstore/releases/20200325121114/log ] as deploy@106.12.130.135
+ DEBUG [51650c91] Command: [ -d /home/deploy/hxstore/releases/20200325121114/log ]
+ DEBUG [51650c91] Finished in 0.215 seconds with exit status 0 (successful).
+  INFO [3b3ab932] Running /usr/bin/env rm -rf /home/deploy/hxstore/releases/20200325121114/log as deploy@106.12.130.135
+ DEBUG [3b3ab932] Command: /usr/bin/env rm -rf /home/deploy/hxstore/releases/20200325121114/log
+  INFO [3b3ab932] Finished in 0.211 seconds with exit status 0 (successful).
+  INFO [b42b8a3e] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/log /home/deploy/hxstore/releases/20200325121114/log as deploy@106.12.130.135
+ DEBUG [b42b8a3e] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/log /home/deploy/hxstore/releases/20200325121114/log
+  INFO [b42b8a3e] Finished in 0.213 seconds with exit status 0 (successful).
+ DEBUG [b2bdfdc6] Running [ -L /home/deploy/hxstore/releases/20200325121114/tmp/pids ] as deploy@106.12.130.135
+ DEBUG [b2bdfdc6] Command: [ -L /home/deploy/hxstore/releases/20200325121114/tmp/pids ]
+ DEBUG [b2bdfdc6] Finished in 0.210 seconds with exit status 1 (failed).
+ DEBUG [6dc3e2b9] Running [ -d /home/deploy/hxstore/releases/20200325121114/tmp/pids ] as deploy@106.12.130.135
+ DEBUG [6dc3e2b9] Command: [ -d /home/deploy/hxstore/releases/20200325121114/tmp/pids ]
+ DEBUG [6dc3e2b9] Finished in 0.211 seconds with exit status 1 (failed).
+  INFO [e818f5e0] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/pids /home/deploy/hxstore/releases/20200325121114/tmp/pids as deploy@106.12.130.135
+ DEBUG [e818f5e0] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/pids /home/deploy/hxstore/releases/20200325121114/tmp/pids
+  INFO [e818f5e0] Finished in 0.212 seconds with exit status 0 (successful).
+ DEBUG [6ec5719f] Running [ -L /home/deploy/hxstore/releases/20200325121114/tmp/cache ] as deploy@106.12.130.135
+ DEBUG [6ec5719f] Command: [ -L /home/deploy/hxstore/releases/20200325121114/tmp/cache ]
+ DEBUG [6ec5719f] Finished in 0.210 seconds with exit status 1 (failed).
+ DEBUG [7261ba4f] Running [ -d /home/deploy/hxstore/releases/20200325121114/tmp/cache ] as deploy@106.12.130.135
+ DEBUG [7261ba4f] Command: [ -d /home/deploy/hxstore/releases/20200325121114/tmp/cache ]
+ DEBUG [7261ba4f] Finished in 0.221 seconds with exit status 0 (successful).
+  INFO [4a94eaf5] Running /usr/bin/env rm -rf /home/deploy/hxstore/releases/20200325121114/tmp/cache as deploy@106.12.130.135
+ DEBUG [4a94eaf5] Command: /usr/bin/env rm -rf /home/deploy/hxstore/releases/20200325121114/tmp/cache
+  INFO [4a94eaf5] Finished in 0.225 seconds with exit status 0 (successful).
+  INFO [8aadfb02] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/cache /home/deploy/hxstore/releases/20200325121114/tmp/cache as deploy@106.12.130.135
+ DEBUG [8aadfb02] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/cache /home/deploy/hxstore/releases/20200325121114/tmp/cache
+  INFO [8aadfb02] Finished in 0.210 seconds with exit status 0 (successful).
+ DEBUG [907e6e77] Running [ -L /home/deploy/hxstore/releases/20200325121114/tmp/sockets ] as deploy@106.12.130.135
+ DEBUG [907e6e77] Command: [ -L /home/deploy/hxstore/releases/20200325121114/tmp/sockets ]
+ DEBUG [907e6e77] Finished in 0.212 seconds with exit status 1 (failed).
+ DEBUG [bd3c7608] Running [ -d /home/deploy/hxstore/releases/20200325121114/tmp/sockets ] as deploy@106.12.130.135
+ DEBUG [bd3c7608] Command: [ -d /home/deploy/hxstore/releases/20200325121114/tmp/sockets ]
+ DEBUG [bd3c7608] Finished in 0.214 seconds with exit status 1 (failed).
+  INFO [26aa0f99] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/sockets /home/deploy/hxstore/releases/20200325121114/tmp/sockets as deploy@106.12.130.135
+ DEBUG [26aa0f99] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/sockets /home/deploy/hxstore/releases/20200325121114/tmp/sockets
+  INFO [26aa0f99] Finished in 0.211 seconds with exit status 0 (successful).
+ DEBUG [810dac0f] Running [ -L /home/deploy/hxstore/releases/20200325121114/public/system ] as deploy@106.12.130.135
+ DEBUG [810dac0f] Command: [ -L /home/deploy/hxstore/releases/20200325121114/public/system ]
+ DEBUG [810dac0f] Finished in 0.212 seconds with exit status 1 (failed).
+ DEBUG [1b920051] Running [ -d /home/deploy/hxstore/releases/20200325121114/public/system ] as deploy@106.12.130.135
+ DEBUG [1b920051] Command: [ -d /home/deploy/hxstore/releases/20200325121114/public/system ]
+ DEBUG [1b920051] Finished in 0.209 seconds with exit status 1 (failed).
+  INFO [b8e8ede1] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/public/system /home/deploy/hxstore/releases/20200325121114/public/system as deploy@106.12.130.135
+ DEBUG [b8e8ede1] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/public/system /home/deploy/hxstore/releases/20200325121114/public/system
+  INFO [b8e8ede1] Finished in 0.214 seconds with exit status 0 (successful).
+ DEBUG [c8784e5f] Running [ -L /home/deploy/hxstore/releases/20200325121114/public/assets ] as deploy@106.12.130.135
+ DEBUG [c8784e5f] Command: [ -L /home/deploy/hxstore/releases/20200325121114/public/assets ]
+ DEBUG [c8784e5f] Finished in 0.210 seconds with exit status 1 (failed).
+ DEBUG [3db1394c] Running [ -d /home/deploy/hxstore/releases/20200325121114/public/assets ] as deploy@106.12.130.135
+ DEBUG [3db1394c] Command: [ -d /home/deploy/hxstore/releases/20200325121114/public/assets ]
+ DEBUG [3db1394c] Finished in 0.210 seconds with exit status 1 (failed).
+  INFO [424d6e30] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/public/assets /home/deploy/hxstore/releases/20200325121114/public/assets as deploy@106.12.130.135
+ DEBUG [424d6e30] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/public/assets /home/deploy/hxstore/releases/20200325121114/public/assets
+  INFO [424d6e30] Finished in 0.213 seconds with exit status 0 (successful).
+ DEBUG [4a041c71] Running if test ! -d /home/deploy/hxstore/releases/20200325121114; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325121114'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [4a041c71] Command: if test ! -d /home/deploy/hxstore/releases/20200325121114; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325121114'" 1>&2; false; fi
+ DEBUG [4a041c71] Finished in 0.215 seconds with exit status 0 (successful).
+ DEBUG [6496aedd] Running /usr/bin/env bundle check --path /home/deploy/hxstore/shared/bundle as deploy@106.12.130.135
+ DEBUG [6496aedd] Command: cd /home/deploy/hxstore/releases/20200325121114 && /usr/bin/env bundle check --path /home/deploy/hxstore/shared/bundle
+ DEBUG [6496aedd] 	The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+ DEBUG [6496aedd] 	The following gems are missing
+ DEBUG [6496aedd] 	 * net-ssh (5.2.0)
+ DEBUG [6496aedd] 	 * net-scp (2.0.0)
+ DEBUG [6496aedd] 	 * sshkit (1.21.0)
+ DEBUG [6496aedd] 	 * airbrussh (1.4.0)
+ DEBUG [6496aedd] 	 * bindex (0.8.1)
+ DEBUG [6496aedd] 	 * byebug (11.1.1)
+ DEBUG [6496aedd] 	 * capistrano (3.12.1)
+ DEBUG [6496aedd] 	 * capistrano-bundler (1.6.0)
+ DEBUG [6496aedd] 	 * capistrano-passenger (0.2.0)
+ DEBUG [6496aedd] 	 * capistrano-rails (1.4.0)
+ DEBUG [6496aedd] 	 * diff-lcs (1.3)
+ DEBUG [6496aedd] 	 * launchy (2.4.3)
+ DEBUG [6496aedd] 	 * letter_opener (1.7.0)
+ DEBUG [6496aedd] 	 * listen (3.0.8)
+ DEBUG [6496aedd] 	 * rspec-support (3.9.2)
+ DEBUG [6496aedd] 	 * rspec-core (3.9.1)
+ DEBUG [6496aedd] 	 * rspec-expectations (3.9.1)
+ DEBUG [6496aedd] 	 * rspec-mocks (3.9.1)
+ DEBUG [6496aedd] 	 * rspec-rails (3.9.1)
+ DEBUG [6496aedd] 	 * spring (2.1.0)
+ DEBUG [6496aedd] 	 * spring-watcher-listen (2.0.1)
+ DEBUG [6496aedd] 	 * web-console (3.7.0)
+ DEBUG [6496aedd] 	Install missing gems with `bundle install`
+ DEBUG [6496aedd] Finished in 0.479 seconds with exit status 1 (failed).
+  INFO [70b59a0e] Running /usr/bin/env bundle install --path /home/deploy/hxstore/shared/bundle --jobs 4 --without development test --deployment --quiet as deploy@106.12.130.135
+ DEBUG [70b59a0e] Command: cd /home/deploy/hxstore/releases/20200325121114 && /usr/bin/env bundle install --path /home/deploy/hxstore/shared/bundle --jobs 4 --without development test --deployment --quiet
+  INFO [70b59a0e] Finished in 0.583 seconds with exit status 0 (successful).
+ DEBUG [8026d6c5] Running if test ! -d /home/deploy/hxstore/releases/20200325121114; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325121114'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [8026d6c5] Command: if test ! -d /home/deploy/hxstore/releases/20200325121114; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325121114'" 1>&2; false; fi
+ DEBUG [8026d6c5] Finished in 0.209 seconds with exit status 0 (successful).
+  INFO [be81f801] Running bundle exec rake assets:precompile as deploy@106.12.130.135
+ DEBUG [be81f801] Command: cd /home/deploy/hxstore/releases/20200325121114 && ( export RAILS_ENV="production" RAILS_GROUPS="" ; bundle exec rake assets:precompile )
+ DEBUG [be81f801] 	rake aborted!
+ DEBUG [be81f801] 	YAML syntax error occurred while parsing /home/deploy/hxstore/releases/20200325121114/config/database.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Error: (<unknown>): could not find expected ':' while scanning a simple key at line 7 column 3
+ DEBUG [be81f801] 	/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/configuration.rb:148:in `rescue in database_configuration'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/configuration.rb:130:in `database_configuration'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activerecord-5.0.7.2/lib/active_record/railtie.rb:122:in `block (2 levels) in <class:Railtie>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:69:in `instance_eval'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:69:in `block in execute_hook'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:60:in `with_execution_control'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:65:in `execute_hook'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:50:in `block in run_load_hooks'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:49:in `each'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:49:in `run_load_hooks'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activerecord-5.0.7.2/lib/active_record/base.rb:324:in `<module:ActiveRecord>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activerecord-5.0.7.2/lib/active_record/base.rb:24:in `<top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `block in require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/releases/20200325121114/app/models/application_record.rb:1:in `<top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `block in require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:380:in `block in require_or_load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:37:in `block in load_interlock'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies/interlock.rb:12:in `block in loading'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/concurrency/share_lock.rb:150:in `exclusive'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies/interlock.rb:11:in `loading'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:37:in `load_interlock'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:358:in `require_or_load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:512:in `load_missing_constant'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:203:in `const_missing'
+/home/deploy/hxstore/releases/20200325121114/app/models/user.rb:1:in `<top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `block in require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:380:in `block in require_or_load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:37:in `block in load_interlock'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies/interlock.rb:12:in `block in loading'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/concurrency/share_lock.rb:150:in `exclusive'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies/interlock.rb:11:in `loading'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:37:in `load_interlock'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:358:in `require_or_load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:512:in `load_missing_constant'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:203:in `const_missing'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/inflector/methods.rb:268:in `const_get'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/inflector/methods.rb:268:in `block in constantize'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/inflector/methods.rb:266:in `each'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/inflector/methods.rb:266:in `inject'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/inflector/methods.rb:266:in `constantize'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:584:in `get'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:615:in `constantize'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise.rb:320:in `get'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/mapping.rb:83:in `to'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/mapping.rb:78:in `modules'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/mapping.rb:95:in `routes'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/mapping.rb:162:in `default_used_route'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/mapping.rb:72:in `initialize'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise.rb:350:in `new'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise.rb:350:in `add_mapping'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/rails/routes.rb:243:in `block in devise_for'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/rails/routes.rb:242:in `each'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/rails/routes.rb:242:in `devise_for'
+/home/deploy/hxstore/releases/20200325121114/config/routes.rb:2:in `block in <top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/routing/route_set.rb:391:in `instance_exec'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/routing/route_set.rb:391:in `eval_block'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/routing/route_set.rb:373:in `draw'
+/home/deploy/hxstore/releases/20200325121114/config/routes.rb:1:in `<top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:287:in `load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:287:in `block in load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:287:in `load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:40:in `each'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:40:in `load_paths'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:16:in `reload!'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:26:in `block in updater'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/file_update_checker.rb:77:in `execute'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:27:in `updater'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:7:in `execute_if_updated'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/finisher.rb:119:in `block in <module:Finisher>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/initializable.rb:30:in `instance_exec'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/initializable.rb:30:in `run'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/initializable.rb:55:in `block in run_initializers'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/initializable.rb:54:in `run_initializers'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application.rb:352:in `initialize!'
+/home/deploy/hxstore/releases/20200325121114/config/environment.rb:5:in `<top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `block in require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application.rb:328:in `require_environment!'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application.rb:448:in `block in run_tasks_blocks'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/task.rb:62:in `block (2 levels) in define'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/rake-13.0.1/exe/rake:27:in `<top (required)>'
+ DEBUG [be81f801] 	
+Caused by:
+ DEBUG [be81f801] 	Psych::SyntaxError: (<unknown>): could not find expected ':' while scanning a simple key at line 7 column 3
+ DEBUG [be81f801] 	/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/configuration.rb:137:in `database_configuration'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activerecord-5.0.7.2/lib/active_record/railtie.rb:122:in `block (2 levels) in <class:Railtie>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:69:in `instance_eval'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:69:in `block in execute_hook'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:60:in `with_execution_control'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:65:in `execute_hook'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:50:in `block in run_load_hooks'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:49:in `each'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/lazy_load_hooks.rb:49:in `run_load_hooks'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activerecord-5.0.7.2/lib/active_record/base.rb:324:in `<module:ActiveRecord>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activerecord-5.0.7.2/lib/active_record/base.rb:24:in `<top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `block in require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/releases/20200325121114/app/models/application_record.rb:1:in `<top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `block in require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:380:in `block in require_or_load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:37:in `block in load_interlock'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies/interlock.rb:12:in `block in loading'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/concurrency/share_lock.rb:150:in `exclusive'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies/interlock.rb:11:in `loading'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:37:in `load_interlock'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:358:in `require_or_load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:512:in `load_missing_constant'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:203:in `const_missing'
+/home/deploy/hxstore/releases/20200325121114/app/models/user.rb:1:in `<top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `block in require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:380:in `block in require_or_load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:37:in `block in load_interlock'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies/interlock.rb:12:in `block in loading'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/concurrency/share_lock.rb:150:in `exclusive'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies/interlock.rb:11:in `loading'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:37:in `load_interlock'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:358:in `require_or_load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:512:in `load_missing_constant'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:203:in `const_missing'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/inflector/methods.rb:268:in `const_get'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/inflector/methods.rb:268:in `block in constantize'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/inflector/methods.rb:266:in `each'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/inflector/methods.rb:266:in `inject'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/inflector/methods.rb:266:in `constantize'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:584:in `get'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:615:in `constantize'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise.rb:320:in `get'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/mapping.rb:83:in `to'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/mapping.rb:78:in `modules'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/mapping.rb:95:in `routes'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/mapping.rb:162:in `default_used_route'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/mapping.rb:72:in `initialize'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise.rb:350:in `new'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise.rb:350:in `add_mapping'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/rails/routes.rb:243:in `block in devise_for'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/rails/routes.rb:242:in `each'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/devise-4.7.1/lib/devise/rails/routes.rb:242:in `devise_for'
+/home/deploy/hxstore/releases/20200325121114/config/routes.rb:2:in `block in <top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/routing/route_set.rb:391:in `instance_exec'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/routing/route_set.rb:391:in `eval_block'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/routing/route_set.rb:373:in `draw'
+/home/deploy/hxstore/releases/20200325121114/config/routes.rb:1:in `<top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:287:in `load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:287:in `block in load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:287:in `load'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:40:in `each'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:40:in `load_paths'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:16:in `reload!'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:26:in `block in updater'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/file_update_checker.rb:77:in `execute'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:27:in `updater'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/routes_reloader.rb:7:in `execute_if_updated'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application/finisher.rb:119:in `block in <module:Finisher>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/initializable.rb:30:in `instance_exec'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/initializable.rb:30:in `run'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/initializable.rb:55:in `block in run_initializers'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/initializable.rb:54:in `run_initializers'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application.rb:352:in `initialize!'
+/home/deploy/hxstore/releases/20200325121114/config/environment.rb:5:in `<top (required)>'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `block in require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/activesupport-5.0.7.2/lib/active_support/dependencies.rb:293:in `require'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application.rb:328:in `require_environment!'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/railties-5.0.7.2/lib/rails/application.rb:448:in `block in run_tasks_blocks'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/task.rb:62:in `block (2 levels) in define'
+/home/deploy/hxstore/shared/bundle/ruby/2.5.0/gems/rake-13.0.1/exe/rake:27:in `<top (required)>'
+ DEBUG [be81f801] 	Tasks: TOP => environment
+ DEBUG [be81f801] 	(See full trace by running task with --trace)
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-25 20:38:08 +0800 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [5ef5a627] Running /usr/bin/env mkdir -p /tmp as deploy@106.12.130.135
+ DEBUG [5ef5a627] Command: /usr/bin/env mkdir -p /tmp
+  INFO [5ef5a627] Finished in 0.747 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-hxstore-production-oobin.sh 0.0%
+  INFO Uploading /tmp/git-ssh-hxstore-production-oobin.sh 100.0%
+  INFO [9ebf339c] Running /usr/bin/env chmod 700 /tmp/git-ssh-hxstore-production-oobin.sh as deploy@106.12.130.135
+ DEBUG [9ebf339c] Command: /usr/bin/env chmod 700 /tmp/git-ssh-hxstore-production-oobin.sh
+  INFO [9ebf339c] Finished in 0.185 seconds with exit status 0 (successful).
+  INFO [126e19fc] Running /usr/bin/env git ls-remote git@github.com:shibin88/hxstore.git HEAD as deploy@106.12.130.135
+ DEBUG [126e19fc] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env git ls-remote git@github.com:shibin88/hxstore.git HEAD )
+ DEBUG [126e19fc] 	8070f08118e3de7d89f79f8adbef2e2889af3501	HEAD
+  INFO [126e19fc] Finished in 3.444 seconds with exit status 0 (successful).
+  INFO [19bc39b5] Running /usr/bin/env mkdir -p /home/deploy/hxstore/shared /home/deploy/hxstore/releases as deploy@106.12.130.135
+ DEBUG [19bc39b5] Command: /usr/bin/env mkdir -p /home/deploy/hxstore/shared /home/deploy/hxstore/releases
+  INFO [19bc39b5] Finished in 0.145 seconds with exit status 0 (successful).
+  INFO [e90f042d] Running /usr/bin/env mkdir -p /home/deploy/hxstore/shared/log /home/deploy/hxstore/shared/tmp/pids /home/deploy/hxstore/shared/tmp/cache /home/deploy/hxstore/shared/tmp/sockets /home/deploy/hxstore/shared/public/system /home/deploy/hxstore/shared/public/assets as deploy@106.12.130.135
+ DEBUG [e90f042d] Command: /usr/bin/env mkdir -p /home/deploy/hxstore/shared/log /home/deploy/hxstore/shared/tmp/pids /home/deploy/hxstore/shared/tmp/cache /home/deploy/hxstore/shared/tmp/sockets /home/deploy/hxstore/shared/public/system /home/deploy/hxstore/shared/public/assets
+  INFO [e90f042d] Finished in 0.187 seconds with exit status 0 (successful).
+  INFO [f02ac8f0] Running /usr/bin/env mkdir -p /home/deploy/hxstore/shared/config as deploy@106.12.130.135
+ DEBUG [f02ac8f0] Command: /usr/bin/env mkdir -p /home/deploy/hxstore/shared/config
+  INFO [f02ac8f0] Finished in 0.182 seconds with exit status 0 (successful).
+ DEBUG [92fced87] Running [ -f /home/deploy/hxstore/shared/config/database.yml ] as deploy@106.12.130.135
+ DEBUG [92fced87] Command: [ -f /home/deploy/hxstore/shared/config/database.yml ]
+ DEBUG [92fced87] Finished in 0.183 seconds with exit status 0 (successful).
+ DEBUG [91bdfd0a] Running [ -f /home/deploy/hxstore/shared/config/secrets.yml ] as deploy@106.12.130.135
+ DEBUG [91bdfd0a] Command: [ -f /home/deploy/hxstore/shared/config/secrets.yml ]
+ DEBUG [91bdfd0a] Finished in 0.183 seconds with exit status 0 (successful).
+ DEBUG [1d038fd8] Running [ -f /home/deploy/hxstore/current/REVISION ] as deploy@106.12.130.135
+ DEBUG [1d038fd8] Command: [ -f /home/deploy/hxstore/current/REVISION ]
+ DEBUG [1d038fd8] Finished in 0.184 seconds with exit status 1 (failed).
+ DEBUG [59bc956c] Running [ -f /home/deploy/hxstore/repo/HEAD ] as deploy@106.12.130.135
+ DEBUG [59bc956c] Command: [ -f /home/deploy/hxstore/repo/HEAD ]
+ DEBUG [59bc956c] Finished in 0.184 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/hxstore/repo
+ DEBUG [fdf3cdb9] Running if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [fdf3cdb9] Command: if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi
+ DEBUG [fdf3cdb9] Finished in 0.184 seconds with exit status 0 (successful).
+  INFO [51de574e] Running /usr/bin/env git remote set-url origin git@github.com:shibin88/hxstore.git as deploy@106.12.130.135
+ DEBUG [51de574e] Command: cd /home/deploy/hxstore/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env git remote set-url origin git@github.com:shibin88/hxstore.git )
+  INFO [51de574e] Finished in 0.185 seconds with exit status 0 (successful).
+  INFO [44faac67] Running /usr/bin/env git remote update --prune as deploy@106.12.130.135
+ DEBUG [44faac67] Command: cd /home/deploy/hxstore/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [44faac67] 	Fetching origin
+  INFO [44faac67] Finished in 3.489 seconds with exit status 0 (successful).
+ DEBUG [cd153919] Running if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [cd153919] Command: if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi
+ DEBUG [cd153919] Finished in 0.145 seconds with exit status 0 (successful).
+  INFO [614b39ff] Running /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325123814 as deploy@106.12.130.135
+ DEBUG [614b39ff] Command: cd /home/deploy/hxstore/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325123814 )
+  INFO [614b39ff] Finished in 0.188 seconds with exit status 0 (successful).
+  INFO [8e37ac0a] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/hxstore/releases/20200325123814 as deploy@106.12.130.135
+ DEBUG [8e37ac0a] Command: cd /home/deploy/hxstore/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/hxstore/releases/20200325123814 )
+  INFO [8e37ac0a] Finished in 0.240 seconds with exit status 0 (successful).
+ DEBUG [45f9b53d] Running if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [45f9b53d] Command: if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi
+ DEBUG [45f9b53d] Finished in 0.186 seconds with exit status 0 (successful).
+ DEBUG [9f870140] Running /usr/bin/env git rev-list --max-count=1 master as deploy@106.12.130.135
+ DEBUG [9f870140] Command: cd /home/deploy/hxstore/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [9f870140] 	8070f08118e3de7d89f79f8adbef2e2889af3501
+ DEBUG [9f870140] Finished in 0.188 seconds with exit status 0 (successful).
+ DEBUG [7eee8835] Running if test ! -d /home/deploy/hxstore/releases/20200325123814; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325123814'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [7eee8835] Command: if test ! -d /home/deploy/hxstore/releases/20200325123814; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325123814'" 1>&2; false; fi
+ DEBUG [7eee8835] Finished in 0.180 seconds with exit status 0 (successful).
+  INFO [2db5bf48] Running /usr/bin/env echo "8070f08118e3de7d89f79f8adbef2e2889af3501" > REVISION as deploy@106.12.130.135
+ DEBUG [2db5bf48] Command: cd /home/deploy/hxstore/releases/20200325123814 && /usr/bin/env echo "8070f08118e3de7d89f79f8adbef2e2889af3501" > REVISION
+  INFO [2db5bf48] Finished in 0.184 seconds with exit status 0 (successful).
+  INFO [28e673a4] Running /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325123814/config as deploy@106.12.130.135
+ DEBUG [28e673a4] Command: /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325123814/config
+  INFO [28e673a4] Finished in 0.186 seconds with exit status 0 (successful).
+ DEBUG [01d610dc] Running [ -L /home/deploy/hxstore/releases/20200325123814/config/database.yml ] as deploy@106.12.130.135
+ DEBUG [01d610dc] Command: [ -L /home/deploy/hxstore/releases/20200325123814/config/database.yml ]
+ DEBUG [01d610dc] Finished in 0.184 seconds with exit status 1 (failed).
+ DEBUG [c56d8343] Running [ -f /home/deploy/hxstore/releases/20200325123814/config/database.yml ] as deploy@106.12.130.135
+ DEBUG [c56d8343] Command: [ -f /home/deploy/hxstore/releases/20200325123814/config/database.yml ]
+ DEBUG [c56d8343] Finished in 0.185 seconds with exit status 0 (successful).
+  INFO [6135c9da] Running /usr/bin/env rm /home/deploy/hxstore/releases/20200325123814/config/database.yml as deploy@106.12.130.135
+ DEBUG [6135c9da] Command: /usr/bin/env rm /home/deploy/hxstore/releases/20200325123814/config/database.yml
+  INFO [6135c9da] Finished in 0.191 seconds with exit status 0 (successful).
+  INFO [f5b76589] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/config/database.yml /home/deploy/hxstore/releases/20200325123814/config/database.yml as deploy@106.12.130.135
+ DEBUG [f5b76589] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/config/database.yml /home/deploy/hxstore/releases/20200325123814/config/database.yml
+  INFO [f5b76589] Finished in 0.186 seconds with exit status 0 (successful).
+ DEBUG [ad2cb7cd] Running [ -L /home/deploy/hxstore/releases/20200325123814/config/secrets.yml ] as deploy@106.12.130.135
+ DEBUG [ad2cb7cd] Command: [ -L /home/deploy/hxstore/releases/20200325123814/config/secrets.yml ]
+ DEBUG [ad2cb7cd] Finished in 0.182 seconds with exit status 1 (failed).
+ DEBUG [8b1133ce] Running [ -f /home/deploy/hxstore/releases/20200325123814/config/secrets.yml ] as deploy@106.12.130.135
+ DEBUG [8b1133ce] Command: [ -f /home/deploy/hxstore/releases/20200325123814/config/secrets.yml ]
+ DEBUG [8b1133ce] Finished in 0.183 seconds with exit status 0 (successful).
+  INFO [437de5dd] Running /usr/bin/env rm /home/deploy/hxstore/releases/20200325123814/config/secrets.yml as deploy@106.12.130.135
+ DEBUG [437de5dd] Command: /usr/bin/env rm /home/deploy/hxstore/releases/20200325123814/config/secrets.yml
+  INFO [437de5dd] Finished in 0.183 seconds with exit status 0 (successful).
+  INFO [cf278f83] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/config/secrets.yml /home/deploy/hxstore/releases/20200325123814/config/secrets.yml as deploy@106.12.130.135
+ DEBUG [cf278f83] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/config/secrets.yml /home/deploy/hxstore/releases/20200325123814/config/secrets.yml
+  INFO [cf278f83] Finished in 0.183 seconds with exit status 0 (successful).
+  INFO [1f899afe] Running /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325123814 /home/deploy/hxstore/releases/20200325123814/tmp /home/deploy/hxstore/releases/20200325123814/public as deploy@106.12.130.135
+ DEBUG [1f899afe] Command: /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325123814 /home/deploy/hxstore/releases/20200325123814/tmp /home/deploy/hxstore/releases/20200325123814/public
+  INFO [1f899afe] Finished in 0.181 seconds with exit status 0 (successful).
+ DEBUG [fa7a2651] Running [ -L /home/deploy/hxstore/releases/20200325123814/log ] as deploy@106.12.130.135
+ DEBUG [fa7a2651] Command: [ -L /home/deploy/hxstore/releases/20200325123814/log ]
+ DEBUG [fa7a2651] Finished in 0.185 seconds with exit status 1 (failed).
+ DEBUG [1e827dc6] Running [ -d /home/deploy/hxstore/releases/20200325123814/log ] as deploy@106.12.130.135
+ DEBUG [1e827dc6] Command: [ -d /home/deploy/hxstore/releases/20200325123814/log ]
+ DEBUG [1e827dc6] Finished in 0.183 seconds with exit status 0 (successful).
+  INFO [31cf27ed] Running /usr/bin/env rm -rf /home/deploy/hxstore/releases/20200325123814/log as deploy@106.12.130.135
+ DEBUG [31cf27ed] Command: /usr/bin/env rm -rf /home/deploy/hxstore/releases/20200325123814/log
+  INFO [31cf27ed] Finished in 0.190 seconds with exit status 0 (successful).
+  INFO [92437aed] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/log /home/deploy/hxstore/releases/20200325123814/log as deploy@106.12.130.135
+ DEBUG [92437aed] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/log /home/deploy/hxstore/releases/20200325123814/log
+  INFO [92437aed] Finished in 0.185 seconds with exit status 0 (successful).
+ DEBUG [470cba3e] Running [ -L /home/deploy/hxstore/releases/20200325123814/tmp/pids ] as deploy@106.12.130.135
+ DEBUG [470cba3e] Command: [ -L /home/deploy/hxstore/releases/20200325123814/tmp/pids ]
+ DEBUG [470cba3e] Finished in 0.185 seconds with exit status 1 (failed).
+ DEBUG [93f0506f] Running [ -d /home/deploy/hxstore/releases/20200325123814/tmp/pids ] as deploy@106.12.130.135
+ DEBUG [93f0506f] Command: [ -d /home/deploy/hxstore/releases/20200325123814/tmp/pids ]
+ DEBUG [93f0506f] Finished in 0.183 seconds with exit status 1 (failed).
+  INFO [f2d85582] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/pids /home/deploy/hxstore/releases/20200325123814/tmp/pids as deploy@106.12.130.135
+ DEBUG [f2d85582] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/pids /home/deploy/hxstore/releases/20200325123814/tmp/pids
+  INFO [f2d85582] Finished in 0.186 seconds with exit status 0 (successful).
+ DEBUG [5ea07350] Running [ -L /home/deploy/hxstore/releases/20200325123814/tmp/cache ] as deploy@106.12.130.135
+ DEBUG [5ea07350] Command: [ -L /home/deploy/hxstore/releases/20200325123814/tmp/cache ]
+ DEBUG [5ea07350] Finished in 0.183 seconds with exit status 1 (failed).
+ DEBUG [b0a8b4ec] Running [ -d /home/deploy/hxstore/releases/20200325123814/tmp/cache ] as deploy@106.12.130.135
+ DEBUG [b0a8b4ec] Command: [ -d /home/deploy/hxstore/releases/20200325123814/tmp/cache ]
+ DEBUG [b0a8b4ec] Finished in 0.184 seconds with exit status 0 (successful).
+  INFO [86e764db] Running /usr/bin/env rm -rf /home/deploy/hxstore/releases/20200325123814/tmp/cache as deploy@106.12.130.135
+ DEBUG [86e764db] Command: /usr/bin/env rm -rf /home/deploy/hxstore/releases/20200325123814/tmp/cache
+  INFO [86e764db] Finished in 0.195 seconds with exit status 0 (successful).
+  INFO [77bf6729] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/cache /home/deploy/hxstore/releases/20200325123814/tmp/cache as deploy@106.12.130.135
+ DEBUG [77bf6729] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/cache /home/deploy/hxstore/releases/20200325123814/tmp/cache
+  INFO [77bf6729] Finished in 0.181 seconds with exit status 0 (successful).
+ DEBUG [942f888b] Running [ -L /home/deploy/hxstore/releases/20200325123814/tmp/sockets ] as deploy@106.12.130.135
+ DEBUG [942f888b] Command: [ -L /home/deploy/hxstore/releases/20200325123814/tmp/sockets ]
+ DEBUG [942f888b] Finished in 0.184 seconds with exit status 1 (failed).
+ DEBUG [0377e5b7] Running [ -d /home/deploy/hxstore/releases/20200325123814/tmp/sockets ] as deploy@106.12.130.135
+ DEBUG [0377e5b7] Command: [ -d /home/deploy/hxstore/releases/20200325123814/tmp/sockets ]
+ DEBUG [0377e5b7] Finished in 0.192 seconds with exit status 1 (failed).
+  INFO [40d8784d] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/sockets /home/deploy/hxstore/releases/20200325123814/tmp/sockets as deploy@106.12.130.135
+ DEBUG [40d8784d] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/sockets /home/deploy/hxstore/releases/20200325123814/tmp/sockets
+  INFO [40d8784d] Finished in 0.183 seconds with exit status 0 (successful).
+ DEBUG [65ae17ca] Running [ -L /home/deploy/hxstore/releases/20200325123814/public/system ] as deploy@106.12.130.135
+ DEBUG [65ae17ca] Command: [ -L /home/deploy/hxstore/releases/20200325123814/public/system ]
+ DEBUG [65ae17ca] Finished in 0.182 seconds with exit status 1 (failed).
+ DEBUG [e256fedc] Running [ -d /home/deploy/hxstore/releases/20200325123814/public/system ] as deploy@106.12.130.135
+ DEBUG [e256fedc] Command: [ -d /home/deploy/hxstore/releases/20200325123814/public/system ]
+ DEBUG [e256fedc] Finished in 0.184 seconds with exit status 1 (failed).
+  INFO [ad8475c7] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/public/system /home/deploy/hxstore/releases/20200325123814/public/system as deploy@106.12.130.135
+ DEBUG [ad8475c7] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/public/system /home/deploy/hxstore/releases/20200325123814/public/system
+  INFO [ad8475c7] Finished in 0.184 seconds with exit status 0 (successful).
+ DEBUG [833459f1] Running [ -L /home/deploy/hxstore/releases/20200325123814/public/assets ] as deploy@106.12.130.135
+ DEBUG [833459f1] Command: [ -L /home/deploy/hxstore/releases/20200325123814/public/assets ]
+ DEBUG [833459f1] Finished in 0.185 seconds with exit status 1 (failed).
+ DEBUG [c8e3ae53] Running [ -d /home/deploy/hxstore/releases/20200325123814/public/assets ] as deploy@106.12.130.135
+ DEBUG [c8e3ae53] Command: [ -d /home/deploy/hxstore/releases/20200325123814/public/assets ]
+ DEBUG [c8e3ae53] Finished in 0.186 seconds with exit status 1 (failed).
+  INFO [91e3ec80] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/public/assets /home/deploy/hxstore/releases/20200325123814/public/assets as deploy@106.12.130.135
+ DEBUG [91e3ec80] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/public/assets /home/deploy/hxstore/releases/20200325123814/public/assets
+  INFO [91e3ec80] Finished in 0.188 seconds with exit status 0 (successful).
+ DEBUG [986e189c] Running if test ! -d /home/deploy/hxstore/releases/20200325123814; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325123814'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [986e189c] Command: if test ! -d /home/deploy/hxstore/releases/20200325123814; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325123814'" 1>&2; false; fi
+ DEBUG [986e189c] Finished in 0.185 seconds with exit status 0 (successful).
+ DEBUG [cc66155e] Running /usr/bin/env bundle check --path /home/deploy/hxstore/shared/bundle as deploy@106.12.130.135
+ DEBUG [cc66155e] Command: cd /home/deploy/hxstore/releases/20200325123814 && /usr/bin/env bundle check --path /home/deploy/hxstore/shared/bundle
+ DEBUG [cc66155e] 	The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+ DEBUG [cc66155e] 	The following gems are missing
+ DEBUG [cc66155e] 	 * net-ssh (5.2.0)
+ DEBUG [cc66155e] 	 * net-scp (2.0.0)
+ DEBUG [cc66155e] 	 * sshkit (1.21.0)
+ DEBUG [cc66155e] 	 * airbrussh (1.4.0)
+ DEBUG [cc66155e] 	 * bindex (0.8.1)
+ DEBUG [cc66155e] 	 * byebug (11.1.1)
+ DEBUG [cc66155e] 	 * capistrano (3.12.1)
+ DEBUG [cc66155e] 	 * capistrano-bundler (1.6.0)
+ DEBUG [cc66155e] 	 * capistrano-passenger (0.2.0)
+ DEBUG [cc66155e] 	 * capistrano-rails (1.4.0)
+ DEBUG [cc66155e] 	 * diff-lcs (1.3)
+ DEBUG [cc66155e] 	 * launchy (2.4.3)
+ DEBUG [cc66155e] 	 * letter_opener (1.7.0)
+ DEBUG [cc66155e] 	 * listen (3.0.8)
+ DEBUG [cc66155e] 	 * rspec-support (3.9.2)
+ DEBUG [cc66155e] 	 * rspec-core (3.9.1)
+ DEBUG [cc66155e] 	 * rspec-expectations (3.9.1)
+ DEBUG [cc66155e] 	 * rspec-mocks (3.9.1)
+ DEBUG [cc66155e] 	 * rspec-rails (3.9.1)
+ DEBUG [cc66155e] 	 * spring (2.1.0)
+ DEBUG [cc66155e] 	 * spring-watcher-listen (2.0.1)
+ DEBUG [cc66155e] 	 * web-console (3.7.0)
+ DEBUG [cc66155e] 	Install missing gems with `bundle install`
+ DEBUG [cc66155e] Finished in 0.437 seconds with exit status 1 (failed).
+  INFO [e0af8927] Running /usr/bin/env bundle install --path /home/deploy/hxstore/shared/bundle --jobs 4 --without development test --deployment --quiet as deploy@106.12.130.135
+ DEBUG [e0af8927] Command: cd /home/deploy/hxstore/releases/20200325123814 && /usr/bin/env bundle install --path /home/deploy/hxstore/shared/bundle --jobs 4 --without development test --deployment --quiet
+  INFO [e0af8927] Finished in 0.613 seconds with exit status 0 (successful).
+ DEBUG [d9cc7dc1] Running if test ! -d /home/deploy/hxstore/releases/20200325123814; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325123814'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [d9cc7dc1] Command: if test ! -d /home/deploy/hxstore/releases/20200325123814; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325123814'" 1>&2; false; fi
+ DEBUG [d9cc7dc1] Finished in 0.186 seconds with exit status 0 (successful).
+  INFO [aa7eca28] Running bundle exec rake assets:precompile as deploy@106.12.130.135
+ DEBUG [aa7eca28] Command: cd /home/deploy/hxstore/releases/20200325123814 && ( export RAILS_ENV="production" RAILS_GROUPS="" ; bundle exec rake assets:precompile )
+ DEBUG [aa7eca28] 	I, [2020-03-25T20:38:33.898067 #13901]  INFO -- : Writing /home/deploy/hxstore/releases/20200325123814/public/assets/application-e46a4c002119561bdf0df73a54ce6fc7d5e5a895b620ebacf2c98ed8f021f7db.js
+ DEBUG [aa7eca28] 	I, [2020-03-25T20:38:33.898567 #13901]  INFO -- : Writing /home/deploy/hxstore/releases/20200325123814/public/assets/application-e46a4c002119561bdf0df73a54ce6fc7d5e5a895b620ebacf2c98ed8f021f7db.js.gz
+ DEBUG [aa7eca28] 	I, [2020-03-25T20:38:43.642763 #13901]  INFO -- : Writing /home/deploy/hxstore/releases/20200325123814/public/assets/application-e4d0b9aba2c4f7ae769b00432d11374f70e518936e08c3098b0717427ac2ea2c.css
+ DEBUG [aa7eca28] 	I, [2020-03-25T20:38:43.643509 #13901]  INFO -- : Writing /home/deploy/hxstore/releases/20200325123814/public/assets/application-e4d0b9aba2c4f7ae769b00432d11374f70e518936e08c3098b0717427ac2ea2c.css.gz
+ DEBUG [aa7eca28] 	I, [2020-03-25T20:38:43.647046 #13901]  INFO -- : Writing /home/deploy/hxstore/releases/20200325123814/public/assets/bootstrap/glyphicons-halflings-regular-13634da87d9e23f8c3ed9108ce1724d183a39ad072e73e1b3d8cbf646d2d0407.eot
+ DEBUG [aa7eca28] 	I, [2020-03-25T20:38:43.651168 #13901]  INFO -- : Writing /home/deploy/hxstore/releases/20200325123814/public/assets/bootstrap/glyphicons-halflings-regular-13634da87d9e23f8c3ed9108ce1724d183a39ad072e73e1b3d8cbf646d2d0407.eot.gz
+ DEBUG [aa7eca28] 	I, [2020-03-25T20:38:43.651668 #13901]  INFO -- : Writing /home/deploy/hxstore/releases/20200325123814/public/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2
+ DEBUG [aa7eca28] 	I, [2020-03-25T20:38:43.652232 #13901]  INFO -- : Writing /home/deploy/hxstore/releases/20200325123814/public/assets/bootstrap/glyphicons-halflings-regular-a26394f7ede100ca118eff2eda08596275a9839b959c226e15439557a5a80742.woff
+ DEBUG [aa7eca28] 	I, [2020-03-25T20:38:43.652638 #13901]  INFO -- : Writing /home/deploy/hxstore/releases/20200325123814/public/assets/bootstrap/glyphicons-halflings-regular-e395044093757d82afcb138957d06a1ea9361bdcf0b442d06a18a8051af57456.ttf
+ DEBUG [aa7eca28] 	I, [2020-03-25T20:38:43.652995 #13901]  INFO -- : Writing /home/deploy/hxstore/releases/20200325123814/public/assets/bootstrap/glyphicons-halflings-regular-e395044093757d82afcb138957d06a1ea9361bdcf0b442d06a18a8051af57456.ttf.gz
+ DEBUG [aa7eca28] 	I, [2020-03-25T20:38:43.653454 #13901]  INFO -- : Writing /home/deploy/hxstore/releases/20200325123814/public/assets/bootstrap/glyphicons-halflings-regular-42f60659d265c1a3c30f9fa42abcbb56bd4a53af4d83d316d6dd7a36903c43e5.svg
+ DEBUG [aa7eca28] 	I, [2020-03-25T20:38:43.653748 #13901]  INFO -- : Writing /home/deploy/hxstore/releases/20200325123814/public/assets/bootstrap/glyphicons-halflings-regular-42f60659d265c1a3c30f9fa42abcbb56bd4a53af4d83d316d6dd7a36903c43e5.svg.gz
+ DEBUG [aa7eca28] 	I, [2020-03-25T20:38:43.654139 #13901]  INFO -- : Writing /home/deploy/hxstore/releases/20200325123814/public/assets/fontawesome-webfont-7bfcab6db99d5cfbf1705ca0536ddc78585432cc5fa41bbd7ad0f009033b2979.eot
+ DEBUG [aa7eca28] 	I, [2020-03-25T20:38:43.654443 #13901]  INFO -- : Writing /home/deploy/hxstore/releases/20200325123814/public/assets/fontawesome-webfont-7bfcab6db99d5cfbf1705ca0536ddc78585432cc5fa41bbd7ad0f009033b2979.eot.gz
+ DEBUG [aa7eca28] 	I, [2020-03-25T20:38:43.654738 #13901]  INFO -- : Writing /home/deploy/hxstore/releases/20200325123814/public/assets/fontawesome-webfont-2adefcbc041e7d18fcf2d417879dc5a09997aa64d675b7a3c4b6ce33da13f3fe.woff2
+ DEBUG [aa7eca28] 	I, [2020-03-25T20:38:43.655203 #13901]  INFO -- : Writing /home/deploy/hxstore/releases/20200325123814/public/assets/fontawesome-webfont-ba0c59deb5450f5cb41b3f93609ee2d0d995415877ddfa223e8a8a7533474f07.woff
+ DEBUG [aa7eca28] 	I, [2020-03-25T20:38:43.668511 #13901]  INFO -- : Writing /home/deploy/hxstore/releases/20200325123814/public/assets/fontawesome-webfont-aa58f33f239a0fb02f5c7a6c45c043d7a9ac9a093335806694ecd6d4edc0d6a8.ttf
+ DEBUG [aa7eca28] 	I, [2020-03-25T20:38:43.669074 #13901]  INFO -- : Writing /home/deploy/hxstore/releases/20200325123814/public/assets/fontawesome-webfont-aa58f33f239a0fb02f5c7a6c45c043d7a9ac9a093335806694ecd6d4edc0d6a8.ttf.gz
+ DEBUG [aa7eca28] 	I, [2020-03-25T20:38:43.669744 #13901]  INFO -- : Writing /home/deploy/hxstore/releases/20200325123814/public/assets/fontawesome-webfont-ad6157926c1622ba4e1d03d478f1541368524bfc46f51e42fe0d945f7ef323e4.svg
+ DEBUG [aa7eca28] 	I, [2020-03-25T20:38:43.708575 #13901]  INFO -- : Writing /home/deploy/hxstore/releases/20200325123814/public/assets/fontawesome-webfont-ad6157926c1622ba4e1d03d478f1541368524bfc46f51e42fe0d945f7ef323e4.svg.gz
+  INFO [aa7eca28] Finished in 17.229 seconds with exit status 0 (successful).
+ DEBUG [50aaad2e] Running if test ! -d /home/deploy/hxstore/releases/20200325123814; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325123814'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [50aaad2e] Command: if test ! -d /home/deploy/hxstore/releases/20200325123814; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325123814'" 1>&2; false; fi
+ DEBUG [50aaad2e] Finished in 0.188 seconds with exit status 0 (successful).
+  INFO [f4e1321e] Running /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325123814/assets_manifest_backup as deploy@106.12.130.135
+ DEBUG [f4e1321e] Command: cd /home/deploy/hxstore/releases/20200325123814 && /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325123814/assets_manifest_backup
+  INFO [f4e1321e] Finished in 0.190 seconds with exit status 0 (successful).
+ DEBUG [441f5ce1] Running /usr/bin/env ls /home/deploy/hxstore/releases/20200325123814/public/assets/.sprockets-manifest* as deploy@106.12.130.135
+ DEBUG [441f5ce1] Command: cd /home/deploy/hxstore/releases/20200325123814 && /usr/bin/env ls /home/deploy/hxstore/releases/20200325123814/public/assets/.sprockets-manifest*
+ DEBUG [441f5ce1] 	/home/deploy/hxstore/releases/20200325123814/public/assets/.sprockets-manifest-cb28532bd194175635b140ebb6968d93.json
+ DEBUG [441f5ce1] Finished in 0.187 seconds with exit status 0 (successful).
+ DEBUG [487926b3] Running /usr/bin/env ls /home/deploy/hxstore/releases/20200325123814/public/assets/.sprockets-manifest* as deploy@106.12.130.135
+ DEBUG [487926b3] Command: cd /home/deploy/hxstore/releases/20200325123814 && /usr/bin/env ls /home/deploy/hxstore/releases/20200325123814/public/assets/.sprockets-manifest*
+ DEBUG [487926b3] 	/home/deploy/hxstore/releases/20200325123814/public/assets/.sprockets-manifest-cb28532bd194175635b140ebb6968d93.json
+ DEBUG [487926b3] Finished in 0.190 seconds with exit status 0 (successful).
+  INFO [1f4957ac] Running /usr/bin/env cp /home/deploy/hxstore/releases/20200325123814/public/assets/.sprockets-manifest-cb28532bd194175635b140ebb6968d93.json /home/deploy/hxstore/releases/20200325123814/assets_manifest_backup as deploy@106.12.130.135
+ DEBUG [1f4957ac] Command: cd /home/deploy/hxstore/releases/20200325123814 && /usr/bin/env cp /home/deploy/hxstore/releases/20200325123814/public/assets/.sprockets-manifest-cb28532bd194175635b140ebb6968d93.json /home/deploy/hxstore/releases/20200325123814/assets_manifest_backup
+  INFO [1f4957ac] Finished in 0.187 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [4798fd4a] Running if test ! -d /home/deploy/hxstore/releases/20200325123814; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325123814'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [4798fd4a] Command: if test ! -d /home/deploy/hxstore/releases/20200325123814; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325123814'" 1>&2; false; fi
+ DEBUG [4798fd4a] Finished in 0.182 seconds with exit status 0 (successful).
+  INFO [5a391a89] Running bundle exec rake db:migrate as deploy@106.12.130.135
+ DEBUG [5a391a89] Command: cd /home/deploy/hxstore/releases/20200325123814 && ( export RAILS_ENV="production" ; bundle exec rake db:migrate )
+ DEBUG [5a391a89] 	== 20200226042021 DeviseCreateUsers: migrating ================================
+-- create_table(:users)
+   -> 0.0127s
+-- add_index(:users, :email, {:unique=>true})
+   -> 0.0331s
+-- add_index(:users, :reset_password_token, {:unique=>true})
+   -> 0.0139s
+== 20200226042021 DeviseCreateUsers: migrated (0.0598s) =======================
+
+== 20200226051816 CreateProducts: migrating ===================================
+-- create_table(:products)
+   -> 0.0133s
+== 20200226051816 CreateProducts: migrated (0.0133s) ==========================
+
+== 20200226054924 AddIsAdminToUser: migrating =================================
+-- add_column(:users, :is_admin, :boolean, {:default=>false})
+   -> 0.0234s
+== 20200226054924 AddIsAdminToUser: migrated (0.0235s) ========================
+
+== 20200226075205 AddImageToProduct: migrating ================================
+-- add_column(:products, :image, :string)
+   -> 0.0201s
+== 20200226075205 AddImageToProduct: migrated (0.0201s) =======================
+
+== 20200226081829 CreateCarts: migrating ======================================
+-- create_table(:carts)
+   -> 0.0129s
+== 20200226081829 CreateCarts: migrated (0.0129s) =============================
+
+== 20200226081836 CreateCartItems: migrating ==================================
+-- create_table(:cart_items)
+   -> 0.0131s
+== 20200226081836 CreateCartItems: migrated (0.0131s) =========================
+
+== 20200226093134 CreateOrders: migrating =====================================
+-- create_table(:orders)
+   -> 0.0118s
+== 20200226093134 CreateOrders: migrated (0.0118s) ============================
+
+== 20200226094144 CreateProductLists: migrating ===============================
+-- create_table(:product_lists)
+   -> 0.0124s
+== 20200226094144 CreateProductLists: migrated (0.0125s) ======================
+
+== 20200226094813 AddTokenToOrder: migrating ==================================
+-- add_column(:orders, :token, :string)
+   -> 0.0200s
+== 20200226094813 AddTokenToOrder: migrated (0.0201s) =========================
+
+== 20200226100024 AddIsPaidToOrder: migrating =================================
+-- add_column(:orders, :is_paid, :boolean, {:default=>false})
+   -> 0.0172s
+== 20200226100024 AddIsPaidToOrder: migrated (0.0173s) ========================
+
+== 20200226100148 AddPaymentMethodToOrder: migrating ==========================
+-- add_column(:orders, :payment_method, :string)
+   -> 0.0165s
+== 20200226100148 AddPaymentMethodToOrder: migrated (0.0165s) =================
+
+== 20200227032130 AddAasmStateToOrder: migrating ==============================
+-- add_column(:orders, :aasm_state, :string, {:default=>"order_placed"})
+   -> 0.0162s
+-- add_index(:orders, :aasm_state)
+   -> 0.0101s
+== 20200227032130 AddAasmStateToOrder: migrated (0.0264s) =====================
+
+  INFO [5a391a89] Finished in 2.645 seconds with exit status 0 (successful).
+  INFO [fe178794] Running /usr/bin/env ln -s /home/deploy/hxstore/releases/20200325123814 /home/deploy/hxstore/releases/current as deploy@106.12.130.135
+ DEBUG [fe178794] Command: /usr/bin/env ln -s /home/deploy/hxstore/releases/20200325123814 /home/deploy/hxstore/releases/current
+  INFO [fe178794] Finished in 0.186 seconds with exit status 0 (successful).
+  INFO [975faf9f] Running /usr/bin/env mv /home/deploy/hxstore/releases/current /home/deploy/hxstore as deploy@106.12.130.135
+ DEBUG [975faf9f] Command: /usr/bin/env mv /home/deploy/hxstore/releases/current /home/deploy/hxstore
+  INFO [975faf9f] Finished in 0.187 seconds with exit status 0 (successful).
+ DEBUG [43b59999] Running if test ! -d /home/deploy/hxstore/releases/20200325123814; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325123814'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [43b59999] Command: if test ! -d /home/deploy/hxstore/releases/20200325123814; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325123814'" 1>&2; false; fi
+ DEBUG [43b59999] Finished in 0.185 seconds with exit status 0 (successful).
+  INFO [8d668481] Running /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325123814/tmp as deploy@106.12.130.135
+ DEBUG [8d668481] Command: cd /home/deploy/hxstore/releases/20200325123814 && /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325123814/tmp
+  INFO [8d668481] Finished in 0.184 seconds with exit status 0 (successful).
+  INFO [54495e3a] Running /usr/bin/env touch /home/deploy/hxstore/releases/20200325123814/tmp/restart.txt as deploy@106.12.130.135
+ DEBUG [54495e3a] Command: cd /home/deploy/hxstore/releases/20200325123814 && /usr/bin/env touch /home/deploy/hxstore/releases/20200325123814/tmp/restart.txt
+  INFO [54495e3a] Finished in 0.187 seconds with exit status 0 (successful).
+ DEBUG [dee1f782] Running /usr/bin/env ls -x /home/deploy/hxstore/releases as deploy@106.12.130.135
+ DEBUG [dee1f782] Command: /usr/bin/env ls -x /home/deploy/hxstore/releases
+ DEBUG [dee1f782] 	20200323065418	20200323065552	20200323065803	20200323070015	20200323071748
+20200323072027	20200323072139	20200323073507	20200323082835	20200323083605
+20200323084123	20200323084401	20200323085441	20200323091314	20200323092750
+20200323093455	20200324002812	20200324004319	20200324004753	20200325061017
+20200325071010	20200325071143	20200325071458	20200325071744	20200325072715
+20200325113504	20200325114714	20200325120508	20200325121114	20200325123814
+ DEBUG [dee1f782] Finished in 0.187 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 30 deployed releases on 106.12.130.135
+ DEBUG [cec50657] Running [ -d /home/deploy/hxstore/current ] as deploy@106.12.130.135
+ DEBUG [cec50657] Command: [ -d /home/deploy/hxstore/current ]
+ DEBUG [cec50657] Finished in 0.182 seconds with exit status 0 (successful).
+ DEBUG [d530b030] Running /usr/bin/env readlink /home/deploy/hxstore/current as deploy@106.12.130.135
+ DEBUG [d530b030] Command: /usr/bin/env readlink /home/deploy/hxstore/current
+ DEBUG [d530b030] 	/home/deploy/hxstore/releases/20200325123814
+ DEBUG [d530b030] Finished in 0.193 seconds with exit status 0 (successful).
+  INFO [5b30b3bb] Running /usr/bin/env rm -rf /home/deploy/hxstore/releases/20200323065418 /home/deploy/hxstore/releases/20200323065552 /home/deploy/hxstore/releases/20200323065803 /home/deploy/hxstore/releases/20200323070015 /home/deploy/hxstore/releases/20200323071748 /home/deploy/hxstore/releases/20200323072027 /home/deploy/hxstore/releases/20200323072139 /home/deploy/hxstore/releases/20200323073507 /home/deploy/hxstore/releases/20200323082835 /home/deploy/hxstore/releases/20200323083605 /home/deploy/hxstore/releases/20200323084123 /home/deploy/hxstore/releases/20200323084401 /home/deploy/hxstore/releases/20200323085441 /home/deploy/hxstore/releases/20200323091314 /home/deploy/hxstore/releases/20200323092750 /home/deploy/hxstore/releases/20200323093455 /home/deploy/hxstore/releases/20200324002812 /home/deploy/hxstore/releases/20200324004319 /home/deploy/hxstore/releases/20200324004753 /home/deploy/hxstore/releases/20200325061017 /home/deploy/hxstore/releases/20200325071010 /home/deploy/hxstore/releases/20200325071143 /home/deploy/hxstore/releases/20200325071458 /home/deploy/hxstore/releases/20200325071744 /home/deploy/hxstore/releases/20200325072715 as deploy@106.12.130.135
+ DEBUG [5b30b3bb] Command: /usr/bin/env rm -rf /home/deploy/hxstore/releases/20200323065418 /home/deploy/hxstore/releases/20200323065552 /home/deploy/hxstore/releases/20200323065803 /home/deploy/hxstore/releases/20200323070015 /home/deploy/hxstore/releases/20200323071748 /home/deploy/hxstore/releases/20200323072027 /home/deploy/hxstore/releases/20200323072139 /home/deploy/hxstore/releases/20200323073507 /home/deploy/hxstore/releases/20200323082835 /home/deploy/hxstore/releases/20200323083605 /home/deploy/hxstore/releases/20200323084123 /home/deploy/hxstore/releases/20200323084401 /home/deploy/hxstore/releases/20200323085441 /home/deploy/hxstore/releases/20200323091314 /home/deploy/hxstore/releases/20200323092750 /home/deploy/hxstore/releases/20200323093455 /home/deploy/hxstore/releases/20200324002812 /home/deploy/hxstore/releases/20200324004319 /home/deploy/hxstore/releases/20200324004753 /home/deploy/hxstore/releases/20200325061017 /home/deploy/hxstore/releases/20200325071010 /home/deploy/hxstore/releases/20200325071143 /home/deploy/hxstore/releases/20200325071458 /home/deploy/hxstore/releases/20200325071744 /home/deploy/hxstore/releases/20200325072715
+  INFO [5b30b3bb] Finished in 1.039 seconds with exit status 0 (successful).
+ DEBUG [0c74329a] Running if test ! -d /home/deploy/hxstore/releases; then echo "Directory does not exist '/home/deploy/hxstore/releases'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [0c74329a] Command: if test ! -d /home/deploy/hxstore/releases; then echo "Directory does not exist '/home/deploy/hxstore/releases'" 1>&2; false; fi
+ DEBUG [0c74329a] Finished in 0.117 seconds with exit status 0 (successful).
+  INFO [9c70ca51] Running /usr/bin/env echo "Branch master (at 8070f08118e3de7d89f79f8adbef2e2889af3501) deployed as release 20200325123814 by oobin" >> /home/deploy/hxstore/revisions.log as deploy@106.12.130.135
+ DEBUG [9c70ca51] Command: cd /home/deploy/hxstore/releases && /usr/bin/env echo "Branch master (at 8070f08118e3de7d89f79f8adbef2e2889af3501) deployed as release 20200325123814 by oobin" >> /home/deploy/hxstore/revisions.log
+  INFO [9c70ca51] Finished in 0.186 seconds with exit status 0 (successful).
