@@ -9265,3 +9265,269 @@ Caused by:
   INFO [f0dd7767] Running /usr/bin/env echo "Branch master (at 6229a266d8c2267fb67801f2c728bee8c2d3fcd2) deployed as release 20200325130757 by oobin" >> /home/deploy/hxstore/revisions.log as deploy@106.12.130.135
  DEBUG [f0dd7767] Command: cd /home/deploy/hxstore/releases && /usr/bin/env echo "Branch master (at 6229a266d8c2267fb67801f2c728bee8c2d3fcd2) deployed as release 20200325130757 by oobin" >> /home/deploy/hxstore/revisions.log
   INFO [f0dd7767] Finished in 0.208 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-25 21:31:40 +0800 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [5400a756] Running /usr/bin/env mkdir -p /tmp as deploy@106.12.130.135
+ DEBUG [5400a756] Command: /usr/bin/env mkdir -p /tmp
+  INFO [5400a756] Finished in 0.748 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-hxstore-production-oobin.sh 0.0%
+  INFO Uploading /tmp/git-ssh-hxstore-production-oobin.sh 100.0%
+  INFO [aed3eead] Running /usr/bin/env chmod 700 /tmp/git-ssh-hxstore-production-oobin.sh as deploy@106.12.130.135
+ DEBUG [aed3eead] Command: /usr/bin/env chmod 700 /tmp/git-ssh-hxstore-production-oobin.sh
+  INFO [aed3eead] Finished in 0.184 seconds with exit status 0 (successful).
+  INFO [2ea17a5f] Running /usr/bin/env git ls-remote git@github.com:shibin88/hxstore.git HEAD as deploy@106.12.130.135
+ DEBUG [2ea17a5f] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env git ls-remote git@github.com:shibin88/hxstore.git HEAD )
+ DEBUG [2ea17a5f] 	1f2f7893c95a8d96a2631c59058205364b724aa8	HEAD
+  INFO [2ea17a5f] Finished in 4.674 seconds with exit status 0 (successful).
+  INFO [6d0935ae] Running /usr/bin/env mkdir -p /home/deploy/hxstore/shared /home/deploy/hxstore/releases as deploy@106.12.130.135
+ DEBUG [6d0935ae] Command: /usr/bin/env mkdir -p /home/deploy/hxstore/shared /home/deploy/hxstore/releases
+  INFO [6d0935ae] Finished in 0.150 seconds with exit status 0 (successful).
+  INFO [d5923e25] Running /usr/bin/env mkdir -p /home/deploy/hxstore/shared/log /home/deploy/hxstore/shared/tmp/pids /home/deploy/hxstore/shared/tmp/cache /home/deploy/hxstore/shared/tmp/sockets /home/deploy/hxstore/shared/public/system /home/deploy/hxstore/shared/public/assets as deploy@106.12.130.135
+ DEBUG [d5923e25] Command: /usr/bin/env mkdir -p /home/deploy/hxstore/shared/log /home/deploy/hxstore/shared/tmp/pids /home/deploy/hxstore/shared/tmp/cache /home/deploy/hxstore/shared/tmp/sockets /home/deploy/hxstore/shared/public/system /home/deploy/hxstore/shared/public/assets
+  INFO [d5923e25] Finished in 0.179 seconds with exit status 0 (successful).
+  INFO [571e5cfd] Running /usr/bin/env mkdir -p /home/deploy/hxstore/shared/config as deploy@106.12.130.135
+ DEBUG [571e5cfd] Command: /usr/bin/env mkdir -p /home/deploy/hxstore/shared/config
+  INFO [571e5cfd] Finished in 0.184 seconds with exit status 0 (successful).
+ DEBUG [24579e20] Running [ -f /home/deploy/hxstore/shared/config/database.yml ] as deploy@106.12.130.135
+ DEBUG [24579e20] Command: [ -f /home/deploy/hxstore/shared/config/database.yml ]
+ DEBUG [24579e20] Finished in 0.180 seconds with exit status 0 (successful).
+ DEBUG [25ba8e03] Running [ -f /home/deploy/hxstore/shared/config/secrets.yml ] as deploy@106.12.130.135
+ DEBUG [25ba8e03] Command: [ -f /home/deploy/hxstore/shared/config/secrets.yml ]
+ DEBUG [25ba8e03] Finished in 0.182 seconds with exit status 0 (successful).
+ DEBUG [4df7bf59] Running [ -f /home/deploy/hxstore/current/REVISION ] as deploy@106.12.130.135
+ DEBUG [4df7bf59] Command: [ -f /home/deploy/hxstore/current/REVISION ]
+ DEBUG [4df7bf59] Finished in 0.181 seconds with exit status 0 (successful).
+ DEBUG [d2e6f1ca] Running /usr/bin/env cat /home/deploy/hxstore/current/REVISION 2>/dev/null as deploy@106.12.130.135
+ DEBUG [d2e6f1ca] Command: /usr/bin/env cat /home/deploy/hxstore/current/REVISION 2>/dev/null
+ DEBUG [d2e6f1ca] 	6229a266d8c2267fb67801f2c728bee8c2d3fcd2
+ DEBUG [d2e6f1ca] Finished in 0.195 seconds with exit status 0 (successful).
+ DEBUG [ea547858] Running [ -f /home/deploy/hxstore/repo/HEAD ] as deploy@106.12.130.135
+ DEBUG [ea547858] Command: [ -f /home/deploy/hxstore/repo/HEAD ]
+ DEBUG [ea547858] Finished in 0.182 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/hxstore/repo
+ DEBUG [35e0be8f] Running if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [35e0be8f] Command: if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi
+ DEBUG [35e0be8f] Finished in 0.183 seconds with exit status 0 (successful).
+  INFO [6a582972] Running /usr/bin/env git remote set-url origin git@github.com:shibin88/hxstore.git as deploy@106.12.130.135
+ DEBUG [6a582972] Command: cd /home/deploy/hxstore/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env git remote set-url origin git@github.com:shibin88/hxstore.git )
+  INFO [6a582972] Finished in 0.187 seconds with exit status 0 (successful).
+  INFO [8111ae6d] Running /usr/bin/env git remote update --prune as deploy@106.12.130.135
+ DEBUG [8111ae6d] Command: cd /home/deploy/hxstore/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [8111ae6d] 	Fetching origin
+ DEBUG [8111ae6d] 	From github.com:shibin88/hxstore
+   6229a26..1f2f789  master     -> master
+  INFO [8111ae6d] Finished in 5.111 seconds with exit status 0 (successful).
+ DEBUG [33a8f2cd] Running if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [33a8f2cd] Command: if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi
+ DEBUG [33a8f2cd] Finished in 0.192 seconds with exit status 0 (successful).
+  INFO [db342d71] Running /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325133148 as deploy@106.12.130.135
+ DEBUG [db342d71] Command: cd /home/deploy/hxstore/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325133148 )
+  INFO [db342d71] Finished in 0.186 seconds with exit status 0 (successful).
+  INFO [d112c29b] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/hxstore/releases/20200325133148 as deploy@106.12.130.135
+ DEBUG [d112c29b] Command: cd /home/deploy/hxstore/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/hxstore/releases/20200325133148 )
+  INFO [d112c29b] Finished in 0.241 seconds with exit status 0 (successful).
+ DEBUG [610ce090] Running if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [610ce090] Command: if test ! -d /home/deploy/hxstore/repo; then echo "Directory does not exist '/home/deploy/hxstore/repo'" 1>&2; false; fi
+ DEBUG [610ce090] Finished in 0.177 seconds with exit status 0 (successful).
+ DEBUG [03c4e80f] Running /usr/bin/env git rev-list --max-count=1 master as deploy@106.12.130.135
+ DEBUG [03c4e80f] Command: cd /home/deploy/hxstore/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-hxstore-production-oobin.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [03c4e80f] 	1f2f7893c95a8d96a2631c59058205364b724aa8
+ DEBUG [03c4e80f] Finished in 0.201 seconds with exit status 0 (successful).
+ DEBUG [41beb850] Running if test ! -d /home/deploy/hxstore/releases/20200325133148; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325133148'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [41beb850] Command: if test ! -d /home/deploy/hxstore/releases/20200325133148; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325133148'" 1>&2; false; fi
+ DEBUG [41beb850] Finished in 0.180 seconds with exit status 0 (successful).
+  INFO [f46fd7a6] Running /usr/bin/env echo "1f2f7893c95a8d96a2631c59058205364b724aa8" > REVISION as deploy@106.12.130.135
+ DEBUG [f46fd7a6] Command: cd /home/deploy/hxstore/releases/20200325133148 && /usr/bin/env echo "1f2f7893c95a8d96a2631c59058205364b724aa8" > REVISION
+  INFO [f46fd7a6] Finished in 0.183 seconds with exit status 0 (successful).
+  INFO [689163a7] Running /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325133148/config as deploy@106.12.130.135
+ DEBUG [689163a7] Command: /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325133148/config
+  INFO [689163a7] Finished in 0.184 seconds with exit status 0 (successful).
+ DEBUG [289f03e4] Running [ -L /home/deploy/hxstore/releases/20200325133148/config/database.yml ] as deploy@106.12.130.135
+ DEBUG [289f03e4] Command: [ -L /home/deploy/hxstore/releases/20200325133148/config/database.yml ]
+ DEBUG [289f03e4] Finished in 0.182 seconds with exit status 1 (failed).
+ DEBUG [ce7bf565] Running [ -f /home/deploy/hxstore/releases/20200325133148/config/database.yml ] as deploy@106.12.130.135
+ DEBUG [ce7bf565] Command: [ -f /home/deploy/hxstore/releases/20200325133148/config/database.yml ]
+ DEBUG [ce7bf565] Finished in 0.185 seconds with exit status 0 (successful).
+  INFO [f1610a0e] Running /usr/bin/env rm /home/deploy/hxstore/releases/20200325133148/config/database.yml as deploy@106.12.130.135
+ DEBUG [f1610a0e] Command: /usr/bin/env rm /home/deploy/hxstore/releases/20200325133148/config/database.yml
+  INFO [f1610a0e] Finished in 0.185 seconds with exit status 0 (successful).
+  INFO [f4cae070] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/config/database.yml /home/deploy/hxstore/releases/20200325133148/config/database.yml as deploy@106.12.130.135
+ DEBUG [f4cae070] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/config/database.yml /home/deploy/hxstore/releases/20200325133148/config/database.yml
+  INFO [f4cae070] Finished in 0.181 seconds with exit status 0 (successful).
+ DEBUG [3aee9f41] Running [ -L /home/deploy/hxstore/releases/20200325133148/config/secrets.yml ] as deploy@106.12.130.135
+ DEBUG [3aee9f41] Command: [ -L /home/deploy/hxstore/releases/20200325133148/config/secrets.yml ]
+ DEBUG [3aee9f41] Finished in 0.184 seconds with exit status 1 (failed).
+ DEBUG [78478536] Running [ -f /home/deploy/hxstore/releases/20200325133148/config/secrets.yml ] as deploy@106.12.130.135
+ DEBUG [78478536] Command: [ -f /home/deploy/hxstore/releases/20200325133148/config/secrets.yml ]
+ DEBUG [78478536] Finished in 0.183 seconds with exit status 0 (successful).
+  INFO [456f4eb7] Running /usr/bin/env rm /home/deploy/hxstore/releases/20200325133148/config/secrets.yml as deploy@106.12.130.135
+ DEBUG [456f4eb7] Command: /usr/bin/env rm /home/deploy/hxstore/releases/20200325133148/config/secrets.yml
+  INFO [456f4eb7] Finished in 0.183 seconds with exit status 0 (successful).
+  INFO [cf1d228e] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/config/secrets.yml /home/deploy/hxstore/releases/20200325133148/config/secrets.yml as deploy@106.12.130.135
+ DEBUG [cf1d228e] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/config/secrets.yml /home/deploy/hxstore/releases/20200325133148/config/secrets.yml
+  INFO [cf1d228e] Finished in 0.194 seconds with exit status 0 (successful).
+  INFO [b5693e3b] Running /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325133148 /home/deploy/hxstore/releases/20200325133148/tmp /home/deploy/hxstore/releases/20200325133148/public as deploy@106.12.130.135
+ DEBUG [b5693e3b] Command: /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325133148 /home/deploy/hxstore/releases/20200325133148/tmp /home/deploy/hxstore/releases/20200325133148/public
+  INFO [b5693e3b] Finished in 0.180 seconds with exit status 0 (successful).
+ DEBUG [0662d100] Running [ -L /home/deploy/hxstore/releases/20200325133148/log ] as deploy@106.12.130.135
+ DEBUG [0662d100] Command: [ -L /home/deploy/hxstore/releases/20200325133148/log ]
+ DEBUG [0662d100] Finished in 0.184 seconds with exit status 1 (failed).
+ DEBUG [ef2a3c41] Running [ -d /home/deploy/hxstore/releases/20200325133148/log ] as deploy@106.12.130.135
+ DEBUG [ef2a3c41] Command: [ -d /home/deploy/hxstore/releases/20200325133148/log ]
+ DEBUG [ef2a3c41] Finished in 0.179 seconds with exit status 0 (successful).
+  INFO [da0d290b] Running /usr/bin/env rm -rf /home/deploy/hxstore/releases/20200325133148/log as deploy@106.12.130.135
+ DEBUG [da0d290b] Command: /usr/bin/env rm -rf /home/deploy/hxstore/releases/20200325133148/log
+  INFO [da0d290b] Finished in 0.182 seconds with exit status 0 (successful).
+  INFO [76ea80ee] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/log /home/deploy/hxstore/releases/20200325133148/log as deploy@106.12.130.135
+ DEBUG [76ea80ee] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/log /home/deploy/hxstore/releases/20200325133148/log
+  INFO [76ea80ee] Finished in 0.182 seconds with exit status 0 (successful).
+ DEBUG [e5306c46] Running [ -L /home/deploy/hxstore/releases/20200325133148/tmp/pids ] as deploy@106.12.130.135
+ DEBUG [e5306c46] Command: [ -L /home/deploy/hxstore/releases/20200325133148/tmp/pids ]
+ DEBUG [e5306c46] Finished in 0.181 seconds with exit status 1 (failed).
+ DEBUG [d4f90530] Running [ -d /home/deploy/hxstore/releases/20200325133148/tmp/pids ] as deploy@106.12.130.135
+ DEBUG [d4f90530] Command: [ -d /home/deploy/hxstore/releases/20200325133148/tmp/pids ]
+ DEBUG [d4f90530] Finished in 0.188 seconds with exit status 1 (failed).
+  INFO [af937338] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/pids /home/deploy/hxstore/releases/20200325133148/tmp/pids as deploy@106.12.130.135
+ DEBUG [af937338] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/pids /home/deploy/hxstore/releases/20200325133148/tmp/pids
+  INFO [af937338] Finished in 0.184 seconds with exit status 0 (successful).
+ DEBUG [1eb6fac2] Running [ -L /home/deploy/hxstore/releases/20200325133148/tmp/cache ] as deploy@106.12.130.135
+ DEBUG [1eb6fac2] Command: [ -L /home/deploy/hxstore/releases/20200325133148/tmp/cache ]
+ DEBUG [1eb6fac2] Finished in 0.184 seconds with exit status 1 (failed).
+ DEBUG [3b93fada] Running [ -d /home/deploy/hxstore/releases/20200325133148/tmp/cache ] as deploy@106.12.130.135
+ DEBUG [3b93fada] Command: [ -d /home/deploy/hxstore/releases/20200325133148/tmp/cache ]
+ DEBUG [3b93fada] Finished in 0.198 seconds with exit status 0 (successful).
+  INFO [ff4269a0] Running /usr/bin/env rm -rf /home/deploy/hxstore/releases/20200325133148/tmp/cache as deploy@106.12.130.135
+ DEBUG [ff4269a0] Command: /usr/bin/env rm -rf /home/deploy/hxstore/releases/20200325133148/tmp/cache
+  INFO [ff4269a0] Finished in 0.195 seconds with exit status 0 (successful).
+  INFO [3ab3b15c] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/cache /home/deploy/hxstore/releases/20200325133148/tmp/cache as deploy@106.12.130.135
+ DEBUG [3ab3b15c] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/cache /home/deploy/hxstore/releases/20200325133148/tmp/cache
+  INFO [3ab3b15c] Finished in 0.183 seconds with exit status 0 (successful).
+ DEBUG [2fe47a32] Running [ -L /home/deploy/hxstore/releases/20200325133148/tmp/sockets ] as deploy@106.12.130.135
+ DEBUG [2fe47a32] Command: [ -L /home/deploy/hxstore/releases/20200325133148/tmp/sockets ]
+ DEBUG [2fe47a32] Finished in 0.183 seconds with exit status 1 (failed).
+ DEBUG [5cccc1c1] Running [ -d /home/deploy/hxstore/releases/20200325133148/tmp/sockets ] as deploy@106.12.130.135
+ DEBUG [5cccc1c1] Command: [ -d /home/deploy/hxstore/releases/20200325133148/tmp/sockets ]
+ DEBUG [5cccc1c1] Finished in 0.183 seconds with exit status 1 (failed).
+  INFO [3e6e9e2d] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/sockets /home/deploy/hxstore/releases/20200325133148/tmp/sockets as deploy@106.12.130.135
+ DEBUG [3e6e9e2d] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/tmp/sockets /home/deploy/hxstore/releases/20200325133148/tmp/sockets
+  INFO [3e6e9e2d] Finished in 0.191 seconds with exit status 0 (successful).
+ DEBUG [2d797f50] Running [ -L /home/deploy/hxstore/releases/20200325133148/public/system ] as deploy@106.12.130.135
+ DEBUG [2d797f50] Command: [ -L /home/deploy/hxstore/releases/20200325133148/public/system ]
+ DEBUG [2d797f50] Finished in 0.200 seconds with exit status 1 (failed).
+ DEBUG [d9264d90] Running [ -d /home/deploy/hxstore/releases/20200325133148/public/system ] as deploy@106.12.130.135
+ DEBUG [d9264d90] Command: [ -d /home/deploy/hxstore/releases/20200325133148/public/system ]
+ DEBUG [d9264d90] Finished in 0.182 seconds with exit status 1 (failed).
+  INFO [fa73cbd3] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/public/system /home/deploy/hxstore/releases/20200325133148/public/system as deploy@106.12.130.135
+ DEBUG [fa73cbd3] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/public/system /home/deploy/hxstore/releases/20200325133148/public/system
+  INFO [fa73cbd3] Finished in 0.187 seconds with exit status 0 (successful).
+ DEBUG [a5c58205] Running [ -L /home/deploy/hxstore/releases/20200325133148/public/assets ] as deploy@106.12.130.135
+ DEBUG [a5c58205] Command: [ -L /home/deploy/hxstore/releases/20200325133148/public/assets ]
+ DEBUG [a5c58205] Finished in 0.182 seconds with exit status 1 (failed).
+ DEBUG [d8ed07d8] Running [ -d /home/deploy/hxstore/releases/20200325133148/public/assets ] as deploy@106.12.130.135
+ DEBUG [d8ed07d8] Command: [ -d /home/deploy/hxstore/releases/20200325133148/public/assets ]
+ DEBUG [d8ed07d8] Finished in 0.198 seconds with exit status 1 (failed).
+  INFO [1ef1fba1] Running /usr/bin/env ln -s /home/deploy/hxstore/shared/public/assets /home/deploy/hxstore/releases/20200325133148/public/assets as deploy@106.12.130.135
+ DEBUG [1ef1fba1] Command: /usr/bin/env ln -s /home/deploy/hxstore/shared/public/assets /home/deploy/hxstore/releases/20200325133148/public/assets
+  INFO [1ef1fba1] Finished in 0.195 seconds with exit status 0 (successful).
+ DEBUG [7b96c7ec] Running if test ! -d /home/deploy/hxstore/releases/20200325133148; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325133148'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [7b96c7ec] Command: if test ! -d /home/deploy/hxstore/releases/20200325133148; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325133148'" 1>&2; false; fi
+ DEBUG [7b96c7ec] Finished in 0.142 seconds with exit status 0 (successful).
+ DEBUG [1e14feb8] Running /usr/bin/env bundle check --path /home/deploy/hxstore/shared/bundle as deploy@106.12.130.135
+ DEBUG [1e14feb8] Command: cd /home/deploy/hxstore/releases/20200325133148 && /usr/bin/env bundle check --path /home/deploy/hxstore/shared/bundle
+ DEBUG [1e14feb8] 	The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+ DEBUG [1e14feb8] 	The following gems are missing
+ DEBUG [1e14feb8] 	 * net-ssh (5.2.0)
+ DEBUG [1e14feb8] 	 * net-scp (2.0.0)
+ DEBUG [1e14feb8] 	 * sshkit (1.21.0)
+ DEBUG [1e14feb8] 	 * airbrussh (1.4.0)
+ DEBUG [1e14feb8] 	 * bindex (0.8.1)
+ DEBUG [1e14feb8] 	 * byebug (11.1.1)
+ DEBUG [1e14feb8] 	 * capistrano (3.12.1)
+ DEBUG [1e14feb8] 	 * capistrano-bundler (1.6.0)
+ DEBUG [1e14feb8] 	 * capistrano-passenger (0.2.0)
+ DEBUG [1e14feb8] 	 * capistrano-rails (1.4.0)
+ DEBUG [1e14feb8] 	 * diff-lcs (1.3)
+ DEBUG [1e14feb8] 	 * launchy (2.4.3)
+ DEBUG [1e14feb8] 	 * letter_opener (1.7.0)
+ DEBUG [1e14feb8] 	 * listen (3.0.8)
+ DEBUG [1e14feb8] 	 * rspec-support (3.9.2)
+ DEBUG [1e14feb8] 	 * rspec-core (3.9.1)
+ DEBUG [1e14feb8] 	 * rspec-expectations (3.9.1)
+ DEBUG [1e14feb8] 	 * rspec-mocks (3.9.1)
+ DEBUG [1e14feb8] 	 * rspec-rails (3.9.1)
+ DEBUG [1e14feb8] 	 * spring (2.1.0)
+ DEBUG [1e14feb8] 	 * spring-watcher-listen (2.0.1)
+ DEBUG [1e14feb8] 	 * web-console (3.7.0)
+ DEBUG [1e14feb8] 	Install missing gems with `bundle install`
+ DEBUG [1e14feb8] Finished in 0.480 seconds with exit status 1 (failed).
+  INFO [a6a4b500] Running /usr/bin/env bundle install --path /home/deploy/hxstore/shared/bundle --jobs 4 --without development test --deployment --quiet as deploy@106.12.130.135
+ DEBUG [a6a4b500] Command: cd /home/deploy/hxstore/releases/20200325133148 && /usr/bin/env bundle install --path /home/deploy/hxstore/shared/bundle --jobs 4 --without development test --deployment --quiet
+  INFO [a6a4b500] Finished in 0.565 seconds with exit status 0 (successful).
+ DEBUG [1b32fd8a] Running if test ! -d /home/deploy/hxstore/releases/20200325133148; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325133148'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [1b32fd8a] Command: if test ! -d /home/deploy/hxstore/releases/20200325133148; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325133148'" 1>&2; false; fi
+ DEBUG [1b32fd8a] Finished in 0.167 seconds with exit status 0 (successful).
+  INFO [aec2d819] Running bundle exec rake assets:precompile as deploy@106.12.130.135
+ DEBUG [aec2d819] Command: cd /home/deploy/hxstore/releases/20200325133148 && ( export RAILS_ENV="production" RAILS_GROUPS="" ; bundle exec rake assets:precompile )
+  INFO [aec2d819] Finished in 2.377 seconds with exit status 0 (successful).
+ DEBUG [8f02b71e] Running if test ! -d /home/deploy/hxstore/releases/20200325133148; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325133148'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [8f02b71e] Command: if test ! -d /home/deploy/hxstore/releases/20200325133148; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325133148'" 1>&2; false; fi
+ DEBUG [8f02b71e] Finished in 0.185 seconds with exit status 0 (successful).
+  INFO [f403457c] Running /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325133148/assets_manifest_backup as deploy@106.12.130.135
+ DEBUG [f403457c] Command: cd /home/deploy/hxstore/releases/20200325133148 && /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325133148/assets_manifest_backup
+  INFO [f403457c] Finished in 0.185 seconds with exit status 0 (successful).
+ DEBUG [497b4932] Running /usr/bin/env ls /home/deploy/hxstore/releases/20200325133148/public/assets/.sprockets-manifest* as deploy@106.12.130.135
+ DEBUG [497b4932] Command: cd /home/deploy/hxstore/releases/20200325133148 && /usr/bin/env ls /home/deploy/hxstore/releases/20200325133148/public/assets/.sprockets-manifest*
+ DEBUG [497b4932] 	/home/deploy/hxstore/releases/20200325133148/public/assets/.sprockets-manifest-cb28532bd194175635b140ebb6968d93.json
+ DEBUG [497b4932] Finished in 0.181 seconds with exit status 0 (successful).
+ DEBUG [37a8dc29] Running /usr/bin/env ls /home/deploy/hxstore/releases/20200325133148/public/assets/.sprockets-manifest* as deploy@106.12.130.135
+ DEBUG [37a8dc29] Command: cd /home/deploy/hxstore/releases/20200325133148 && /usr/bin/env ls /home/deploy/hxstore/releases/20200325133148/public/assets/.sprockets-manifest*
+ DEBUG [37a8dc29] 	/home/deploy/hxstore/releases/20200325133148/public/assets/.sprockets-manifest-cb28532bd194175635b140ebb6968d93.json
+ DEBUG [37a8dc29] Finished in 0.189 seconds with exit status 0 (successful).
+  INFO [b9b8183a] Running /usr/bin/env cp /home/deploy/hxstore/releases/20200325133148/public/assets/.sprockets-manifest-cb28532bd194175635b140ebb6968d93.json /home/deploy/hxstore/releases/20200325133148/assets_manifest_backup as deploy@106.12.130.135
+ DEBUG [b9b8183a] Command: cd /home/deploy/hxstore/releases/20200325133148 && /usr/bin/env cp /home/deploy/hxstore/releases/20200325133148/public/assets/.sprockets-manifest-cb28532bd194175635b140ebb6968d93.json /home/deploy/hxstore/releases/20200325133148/assets_manifest_backup
+  INFO [b9b8183a] Finished in 0.183 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [549a3bcc] Running if test ! -d /home/deploy/hxstore/releases/20200325133148; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325133148'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [549a3bcc] Command: if test ! -d /home/deploy/hxstore/releases/20200325133148; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325133148'" 1>&2; false; fi
+ DEBUG [549a3bcc] Finished in 0.182 seconds with exit status 0 (successful).
+  INFO [faaf3c77] Running bundle exec rake db:migrate as deploy@106.12.130.135
+ DEBUG [faaf3c77] Command: cd /home/deploy/hxstore/releases/20200325133148 && ( export RAILS_ENV="production" ; bundle exec rake db:migrate )
+  INFO [faaf3c77] Finished in 2.049 seconds with exit status 0 (successful).
+  INFO [57e2f19d] Running /usr/bin/env ln -s /home/deploy/hxstore/releases/20200325133148 /home/deploy/hxstore/releases/current as deploy@106.12.130.135
+ DEBUG [57e2f19d] Command: /usr/bin/env ln -s /home/deploy/hxstore/releases/20200325133148 /home/deploy/hxstore/releases/current
+  INFO [57e2f19d] Finished in 0.181 seconds with exit status 0 (successful).
+  INFO [5e2dd4b3] Running /usr/bin/env mv /home/deploy/hxstore/releases/current /home/deploy/hxstore as deploy@106.12.130.135
+ DEBUG [5e2dd4b3] Command: /usr/bin/env mv /home/deploy/hxstore/releases/current /home/deploy/hxstore
+  INFO [5e2dd4b3] Finished in 0.187 seconds with exit status 0 (successful).
+ DEBUG [c97687c4] Running if test ! -d /home/deploy/hxstore/releases/20200325133148; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325133148'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [c97687c4] Command: if test ! -d /home/deploy/hxstore/releases/20200325133148; then echo "Directory does not exist '/home/deploy/hxstore/releases/20200325133148'" 1>&2; false; fi
+ DEBUG [c97687c4] Finished in 0.176 seconds with exit status 0 (successful).
+  INFO [e3bf2964] Running /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325133148/tmp as deploy@106.12.130.135
+ DEBUG [e3bf2964] Command: cd /home/deploy/hxstore/releases/20200325133148 && /usr/bin/env mkdir -p /home/deploy/hxstore/releases/20200325133148/tmp
+  INFO [e3bf2964] Finished in 0.242 seconds with exit status 0 (successful).
+  INFO [a24fc441] Running /usr/bin/env touch /home/deploy/hxstore/releases/20200325133148/tmp/restart.txt as deploy@106.12.130.135
+ DEBUG [a24fc441] Command: cd /home/deploy/hxstore/releases/20200325133148 && /usr/bin/env touch /home/deploy/hxstore/releases/20200325133148/tmp/restart.txt
+  INFO [a24fc441] Finished in 0.186 seconds with exit status 0 (successful).
+ DEBUG [d7de5f94] Running /usr/bin/env ls -x /home/deploy/hxstore/releases as deploy@106.12.130.135
+ DEBUG [d7de5f94] Command: /usr/bin/env ls -x /home/deploy/hxstore/releases
+ DEBUG [d7de5f94] 	20200325120508	20200325121114	20200325123814	20200325130557	20200325130757
+20200325133148
+ DEBUG [d7de5f94] Finished in 0.180 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 106.12.130.135
+ DEBUG [63c224bc] Running [ -d /home/deploy/hxstore/current ] as deploy@106.12.130.135
+ DEBUG [63c224bc] Command: [ -d /home/deploy/hxstore/current ]
+ DEBUG [63c224bc] Finished in 0.197 seconds with exit status 0 (successful).
+ DEBUG [573ef3c4] Running /usr/bin/env readlink /home/deploy/hxstore/current as deploy@106.12.130.135
+ DEBUG [573ef3c4] Command: /usr/bin/env readlink /home/deploy/hxstore/current
+ DEBUG [573ef3c4] 	/home/deploy/hxstore/releases/20200325133148
+ DEBUG [573ef3c4] Finished in 0.198 seconds with exit status 0 (successful).
+  INFO [022d2a00] Running /usr/bin/env rm -rf /home/deploy/hxstore/releases/20200325120508 as deploy@106.12.130.135
+ DEBUG [022d2a00] Command: /usr/bin/env rm -rf /home/deploy/hxstore/releases/20200325120508
+  INFO [022d2a00] Finished in 0.228 seconds with exit status 0 (successful).
+ DEBUG [236d7455] Running if test ! -d /home/deploy/hxstore/releases; then echo "Directory does not exist '/home/deploy/hxstore/releases'" 1>&2; false; fi as deploy@106.12.130.135
+ DEBUG [236d7455] Command: if test ! -d /home/deploy/hxstore/releases; then echo "Directory does not exist '/home/deploy/hxstore/releases'" 1>&2; false; fi
+ DEBUG [236d7455] Finished in 0.201 seconds with exit status 0 (successful).
+  INFO [2fba26ad] Running /usr/bin/env echo "Branch master (at 1f2f7893c95a8d96a2631c59058205364b724aa8) deployed as release 20200325133148 by oobin" >> /home/deploy/hxstore/revisions.log as deploy@106.12.130.135
+ DEBUG [2fba26ad] Command: cd /home/deploy/hxstore/releases && /usr/bin/env echo "Branch master (at 1f2f7893c95a8d96a2631c59058205364b724aa8) deployed as release 20200325133148 by oobin" >> /home/deploy/hxstore/revisions.log
+  INFO [2fba26ad] Finished in 0.180 seconds with exit status 0 (successful).
